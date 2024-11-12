@@ -3,10 +3,10 @@ $(document).ready(function() {
   if ($.isFunction($.fn.turn)) {
     function initializeFlipbook() {
       const isMobile = $(window).width() <= 768;
-      
+
       // Lấy kích thước cho flipbook dựa trên loại thiết bị
-      const flipbookWidth = isMobile ? $(window).width() * 0.8 : $(window).width() * 0.8;
-      const flipbookHeight = isMobile ? $(window).width() * 0.8 : $(window).height() * 0.6;
+      const flipbookWidth = isMobile ? $(window).width() * 1 : $(window).width() * 1;
+      const flipbookHeight = isMobile ? $(window).width() * 0.5 : $(window).height() * 0.5;
 
       $('#flipbook').turn({
         width: flipbookWidth,     // Lấy chiều rộng động
