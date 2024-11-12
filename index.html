@@ -3,31 +3,47 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Flipbook with Turn.js</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/turn.js/4.1.0/turn.min.css">
+    <title>Flipbook Example</title>
+    <link rel="stylesheet" href="style.css"> <!-- Liên kết đến file style.css nếu có -->
     <style>
-        /* Đảm bảo Flipbook chiếm toàn bộ màn hình và không có cuộn ngang */
+        /* Đảm bảo trang chiếm toàn bộ màn hình và không có thanh cuộn ngang */
         body, html {
             margin: 0;
             padding: 0;
             height: 100%;
             overflow: hidden;
+            display: flex;
+            justify-content: center; /* Căn giữa theo chiều ngang */
+            align-items: center; /* Căn giữa theo chiều dọc */
         }
 
+        /* Container chứa flipbook */
         #flipbook {
-            margin: 0 auto;
+            width: 100%;    /* Lấp đầy chiều rộng của màn hình */
+            height: 80vh;    /* Chiếm 80% chiều cao màn hình (hoặc theo ý bạn) */
+            max-width: 1000px; /* Đặt kích thước tối đa để tránh quá lớn */
+            max-height: 600px; /* Đặt kích thước tối đa để tránh quá lớn */
+            background-color: #fff;
+            border: 1px solid #ccc;
             position: relative;
-            width: 100%;
-            height: 100%;
             overflow: hidden;
         }
 
+        /* Các trang trong flipbook */
         .page {
             background: #fff;
             border: 1px solid #ccc;
             display: inline-block;
             width: 100%;
             height: 100%;
+            box-sizing: border-box;
+        }
+
+        /* Đảm bảo ảnh trong các trang khớp với khung */
+        .page img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain; /* Giữ tỷ lệ ảnh */
         }
     </style>
 </head>
@@ -57,41 +73,18 @@
     <div class="page"><img src="images/21.jpg" alt="Page 21"></div>
     <div class="page"><img src="images/22.jpg" alt="Page 22"></div>
     
- </div>
+  </div>
 
-<!-- Include jQuery and Turn.js -->
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/turn.js/4.1.0/turn.min.js"></script>
-
-<script>
-    $(document).ready(function() {
-        var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
-
-        var flipbookOptions = {
-            width: isMobile ? $(window).width() - 20 : 800,  // Kích thước tự động cho mobile và desktop
-            height: isMobile ? $(window).height() - 20 : 600,
-            display: isMobile ? 'single' : 'double',  // Hiển thị một trang cho mobile, hai trang cho desktop
-            mobile: isMobile,
-            autoCenter: true,  // Căn giữa flipbook
-            duration: 1000,    // Thời gian chuyển trang
-            gradients: true,   // Hiệu ứng gradient
-            elevation: 50,     // Độ sâu khi lật trang
-        };
-
-        // Khởi tạo Flipbook
-        $('#flipbook').turn(flipbookOptions);
-
-        // Cập nhật kích thước khi thay đổi kích thước cửa sổ
-        $(window).resize(function() {
-            flipbookOptions.width = isMobile ? $(window).width() - 20 : 800;
-            flipbookOptions.height = isMobile ? $(window).height() - 20 : 600;
-            $('#flipbook').turn('size', flipbookOptions.width, flipbookOptions.height);
+    <script src="turn.js"></script> <!-- Liên kết đến thư viện turn.js -->
+    <script>
+        $(document).ready(function() {
+            // Khởi tạo flipbook với turn.js
+            $('#flipbook').turn({
+                width: '100%',
+                height: '80vh',  // Điều chỉnh chiều cao để thích ứng với màn hình
+                autoCenter: true  // Căn giữa flipbook
+            });
         });
-
-        // Cập nhật kích thước ngay khi trang được tải
-        $(window).trigger('resize');
-    });
-</script>
-
+    </script>
 </body>
 </html>
