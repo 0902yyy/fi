@@ -1,34 +1,22 @@
-$(window).ready(function(){
-    const isMobile = $(window).width() < 768;
-
-    $('#book').turn({
-        acceleration: true,
-        pages: numberOfPages,
-        elevation: 50,
-        display: isMobile ? 'single' : 'double', // Nếu là mobile thì hiển thị 1 trang
-        gradients: !$.isTouch,
-        when: {
-            turning: function(e, page, view) {
-                var range = $(this).turn('range', page);
-                for (page = range[0]; page <= range[1]; page++) 
-                    addPage(page, $(this));
-            },
-            turned: function(e, page) {
-                $('#page-number').val(page);
-            }
-        }
+$(document).ready(function() {
+  // Kiểm tra Turn.js đã được tải chưa
+  if ($.isFunction($.fn.turn)) {
+    $('#flipbook').turn({
+      width: $(window).width() * 0.8,   // Lấy chiều rộng động
+      height: $(window).height() * 0.6, // Lấy chiều cao động
+      autoCenter: true,                 // Tự động căn giữa flipbook
+      display: 'single',                // Hiển thị 1 trang tại một thời điểm
+      acceleration: true,               // Tăng tốc để mượt mà hơn
+      gradients: true,                  // Hiệu ứng gradient khi lật
+      duration: 800                     // Thời gian lật trang
     });
+  } else {
+    console.error("Turn.js chưa được tải đúng.");
+  }
 
-    $('#number-pages').html(numberOfPages);
-
-    $('#page-number').keydown(function(e){
-        if (e.keyCode == 13)
-            $('#book').turn('page', $('#page-number').val());
-    });
+  // Đảm bảo flipbook có thể lật khi thay đổi kích thước màn hình
+  $(window).resize(function() {
+    $('#flipbook').turn('size', $(window).width() * 0.8, $(window).height() * 0.6);
+  });
 });
 
-// Điều chỉnh kích thước flipbook khi thay đổi kích thước cửa sổ
-$(window).resize(function() {
-    const isMobile = $(window).width() < 768;
-    $('#book').turn('display', isMobile ? 'single' : 'double');
-});
