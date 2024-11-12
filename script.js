@@ -33,6 +33,8 @@ $(document).ready(function() {
 
     // Initialize the flipbook with Turn.js
     $flipbook.turn({
-        autoCenter: true
+        autoCenter: true,
+        display: 'double', // This will display two pages at a time, enabling the flip effect.
+        acceleration: true // To make sure the effect is smoother.
     });
 });
