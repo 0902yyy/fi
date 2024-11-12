@@ -27,29 +27,51 @@ body {
   object-fit: contain; /* Đảm bảo ảnh không bị co kéo, giữ tỷ lệ gốc */
 }
 
-@media (max-width: 768px) {
-  /* Đảm bảo flipbook có kích thước vuông trên mobile và căn giữa */
-  #flipbook {
-    width: 80vw;     /* Chiều rộng bằng 80% của viewport */
-    height: 80vw;    /* Chiều cao cũng bằng chiều rộng (tạo hình vuông) */
-    margin: auto;    /* Căn giữa flipbook */
-  }
-
-  #flipbook .page {
-    width: 100%;     /* Chiếm hết chiều rộng của flipbook */
-    height: 100%;    /* Chiếm hết chiều cao của flipbook */
-  }
+#flipbook {
+  width: 80%;
+  height: 80vh;
+  margin: 0 auto;
+  position: relative; /* Để căn vị trí của nút ở dưới flipbook */
 }
 
-@media (min-width: 769px) {
-  /* Dành cho desktop */
-  #flipbook {
-    width: 80%;
-    height: 80vh;  /* Tùy chỉnh chiều cao cho desktop */
-    position: relative; /* Để căn vị trí của nút ở dưới flipbook */
-  }
+/* Định dạng các nút điều khiển */
+.buttons {
+  text-align: center;
+  margin-top: 20px;
 }
 
+.nav-button {
+  background: none;              /* Không có nền */
+  border: none;                  /* Không viền */
+  color: #FF3177;                /* Màu sắc của mũi tên */
+  font-size: 40px;               /* Kích thước của mũi tên */
+  cursor: pointer;
+  display: inline-block;
+  margin: 0 20px;
+  transition: color 0.3s;        /* Hiệu ứng thay đổi màu khi hover */
+}
+
+.nav-button:hover {
+  color: #FF1F5B;                /* Màu hồng đậm khi hover */
+}
+
+/* Định vị trí của các nút */
+.prev {
+  position: relative;
+  left: -60px; /* Nút trước di chuyển sang trái */
+}
+
+.next {
+  position: relative;
+  right: -60px; /* Nút sau di chuyển sang phải */
+}
+
+/* Xóa thanh cuộn */
+body, html {
+  margin: 0;
+  padding: 0;
+  overflow: hidden; /* Ẩn thanh cuộn */
+}
 /* Định dạng các nút điều khiển */
 .buttons {
   text-align: center;
