@@ -14,7 +14,7 @@
         #flipbook {
             width: 1000px;                   /* Đặt chiều rộng flipbook */
             height: 500px;                   /* Đặt chiều cao flipbook */
-            background-color: #f0f0f0;       /* Đặt màu nền cho flipbook */
+            background-color: transparient;       /* Đặt màu nền cho flipbook */
             box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3); /* Hiệu ứng bóng đổ */
             position: relative;              /* Đảm bảo vị trí của flipbook */
             margin: 0 auto;                  /* Căn giữa flipbook */
@@ -59,22 +59,18 @@
 }
 
 .nav-button {
-  background-color: #ff66b2;  /* Màu hồng */
-  border: none;
-  color: white;
-  font-size: 30px;
-  padding: 10px 20px;
+  background: none;              /* Không có nền */
+  border: none;                  /* Không viền */
+  color: #FF3177;                /* Màu sắc của mũi tên */
+  font-size: 40px;               /* Kích thước của mũi tên */
   cursor: pointer;
-  border-radius: 50%; /* Tạo hình tròn cho các nút */
-  width: 50px;
-  height: 50px;
   display: inline-block;
   margin: 0 20px;
-  transition: background-color 0.3s;
+  transition: color 0.3s;        /* Hiệu ứng thay đổi màu khi hover */
 }
 
 .nav-button:hover {
-  background-color: #ff3385; /* Màu hồng đậm khi hover */
+  color: #FF1F5B;                /* Màu hồng đậm khi hover */
 }
 
 /* Định vị trí của các nút */
