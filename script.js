@@ -20,14 +20,20 @@ $(document).ready(function() {
       page: 1,
     });
 
-    // Khi bấm nút "previous", chuyển trang và giữ hiệu ứng lật
+     // Khi bấm nút "previous", lật trang với hiệu ứng cuộn góc
     $('.prev').click(function() {
-      $('#flipbook').turn('previous'); // Lật trang trước
+      $('#flipbook').turn('previous');  // Lật trang trước
+      setTimeout(function() {
+        $('#flipbook').turn('stop');   // Dừng lại sau khi lật xong
+      }, 800); // Thời gian trễ phù hợp với thời gian lật trang
     });
 
-    // Khi bấm nút "next", chuyển trang và giữ hiệu ứng lật
+    // Khi bấm nút "next", lật trang với hiệu ứng cuộn góc
     $('.next').click(function() {
-      $('#flipbook').turn('next'); // Lật trang sau
+      $('#flipbook').turn('next');  // Lật trang sau
+      setTimeout(function() {
+        $('#flipbook').turn('stop');   // Dừng lại sau khi lật xong
+      }, 800); // Thời gian trễ phù hợp với thời gian lật trang
     });
   } else {
     console.error("Turn.js chưa được tải đúng.");
