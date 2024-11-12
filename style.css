@@ -1,78 +1,57 @@
-/* Đảm bảo toàn bộ trang căn giữa */
-html, body {
-    height: 100%;
-    margin: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #f0f0f0;
-    overflow: hidden; /* Ẩn thanh cuộn toàn cục */
+/* Wrapper căn giữa flipbook */
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 90%;
+  margin: 5%;
+  width: 90%;
 }
 
-
-/* Đặt kích thước cho flipbook và cho phép co giãn */
-#flipbook {
-    width: 1000px; /* Kích thước mặc định */
-    height: 500px; /* Kích thước mặc định */
-    background-color: #f0f0f0;
-    position: relative;
-    max-width: 100%; /* Giới hạn chiều rộng tối đa */
-    max-height: 100%; /* Giới hạn chiều cao tối đa */
-    overflow: hidden;
+/* Tạo tỷ lệ cho flipbook */
+.aspect {
+  padding-bottom: 70%; /* Điều chỉnh tỷ lệ chiều cao so với chiều rộng */
+  position: relative;
+  width: 100%;
 }
 
-/* Đảm bảo các trang sẽ hiển thị đúng trên mọi màn hình */
-#flipbook .page {
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: white;
-    position: relative;
+/* Cấu trúc bên trong để chứa flipbook */
+.aspect-inner {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
 }
 
-/* Vùng nhạy cảm cho cạnh trái */
-.page .left, .page .right {
-    position: absolute;
-    top: 0;
-    width: 50%;
-    height: 100%;
-    cursor: pointer;
-    z-index: 10;
-    overflow: hidden;
+/* Các trang của flipbook */
+.flipbook {
+  height: 100%;
+  width: 100%;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  transition: margin-left 0.25s ease-out;
 }
 
-/* Điều chỉnh kích thước ảnh trong flipbook */
-.page img {
-    max-width: 100%;
-    max-height: 100%;
-    object-fit: contain; /* Đảm bảo ảnh không bị biến dạng */
+/* Cấu hình cho mỗi trang */
+.flipbook .page {
+  height: 100%;
+  width: 100%;
 }
 
- /* Điều chỉnh hiển thị cho điện thoại */
-    @media (max-width: 767px) {
-      #flipbook {
-        margin-top: 0;
-        margin-bottom: 0;
-        padding: 0;
-      }
+/* Đảm bảo hình ảnh không bị biến dạng */
+.flipbook .page img {
+  max-width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
 
-      #flipbook .page {
-        width: 100%;
-        height: 100%;
-      }
-    }
-
-    /* Điều chỉnh cho máy tính */
-    @media (min-width: 768px) {
-      #flipbook {
-        margin-top: 0;
-        margin-bottom: 0;
-        padding: 0;
-      }
-    .page .left, .page .right {
-        width: 50%;
-    }
+/* Điều chỉnh tỷ lệ trên màn hình nhỏ */
+@media (max-width: 767px) {
+  .aspect {
+    padding-bottom: 80%; /* Thay đổi tỷ lệ cho thiết bị di động */
+  }
 }
