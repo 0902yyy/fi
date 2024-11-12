@@ -6,16 +6,16 @@ $(document).ready(function() {
         var width = $(window).width();
         var height = $(window).height();
         
-        // Điều chỉnh tỷ lệ cho flipbook
-        var aspectRatio = 2 / 3;
+        // Tính toán tỷ lệ để flipbook có kích thước hợp lý
+        var aspectRatio = 2 / 3;  // Tỷ lệ 2:3 cho flipbook (hoặc thay đổi theo nhu cầu)
 
         if (width / height > aspectRatio) {
-            height = width / aspectRatio;  // Điều chỉnh chiều cao nếu màn hình rộng
+            height = width / aspectRatio;  // Điều chỉnh chiều cao nếu màn hình quá rộng
         } else {
-            width = height * aspectRatio;  // Điều chỉnh chiều rộng nếu màn hình cao
+            width = height * aspectRatio;  // Điều chỉnh chiều rộng nếu màn hình quá cao
         }
 
-        // Resize flipbook với kích thước vừa tính toán
+        // Đảm bảo flipbook được căn giữa
         $flipbook.turn('size', width, height);
     }
 
