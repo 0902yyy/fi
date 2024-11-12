@@ -1,8 +1,7 @@
 $(document).ready(function() {
-    // Khởi tạo flipbook với Turn.js
     var $flipbook = $("#flipbook");
 
-    // Hàm resize flipbook để giữ tỷ lệ
+    // Hàm resize flipbook để giữ tỷ lệ phù hợp trên tất cả các màn hình
     function resizeFlipbook() {
         var width = $(window).width();
         var height = $(window).height();
