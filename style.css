@@ -2,30 +2,33 @@
 .wrapper {
     position: relative;
     width: 100%;
-    height: 100vh;  /* Đảm bảo full screen */
-    overflow: hidden;  /* Ẩn phần vượt quá */
+    height: 100vh;  /* Đảm bảo full màn hình */
+    overflow: hidden;
+    display: flex;
+    justify-content: center; /* Căn giữa */
+    align-items: center; /* Căn giữa theo chiều dọc */
 }
 
 /* Flipbook container */
 .flipbook {
-    width: 100%;
-    height: 100%;
-    position: absolute;  /* Đảm bảo phủ toàn bộ */
-    z-index: 1;  /* Đảm bảo được bao phủ */
+    position: relative;
+    width: 90%;  /* Đảm bảo flipbook chiếm 90% màn hình */
+    height: 90%;  /* Đảm bảo flipbook chiếm 90% màn hình */
+    z-index: 1;
 }
 
-/* Các trang */
+/* Các trang trong flipbook */
 .flipbook .page {
-    width: 50%;  /* Hiển thị hai trang cùng một lúc */
+    width: 50%;  /* Hiển thị 2 trang cùng lúc */
     height: 100%;
     position: relative;
-    z-index: 2;  /* Đảm bảo các trang luôn ở trên */
-    cursor: pointer; /* Thêm con trỏ để người dùng biết có thể tương tác */
+    z-index: 2;
+    cursor: pointer;
 }
 
 /* Hình ảnh trang */
 .flipbook .page img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: cover;  /* Giữ tỷ lệ của ảnh */
 }
