@@ -11,33 +11,51 @@
     body, html {
       margin: 0;
       padding: 0;
-      width: 100%;
       height: 100%;
-      overflow: hidden; /* Loại bỏ cuộn trang */
+      overflow: hidden; /* Đảm bảo không có thanh cuộn */
     }
 
     #flipbook {
       width: 100%;
-      height: 100%;
-      margin: 0 auto;
-      padding: 0; /* Loại bỏ padding */
-      background-color: transparient;
+      height: 100vh; /* Chiếm toàn bộ chiều cao cửa sổ */
+      margin: 0;
+      padding: 0;
+      background-color: #fff;
+      position: relative;
     }
 
     #flipbook .page {
       width: 100%;
       height: 100%;
       margin: 0;
-      padding: 0; /* Loại bỏ padding */
+      padding: 0;
       background-color: #fff;
-      box-shadow: none; /* Loại bỏ shadow nếu cần */
+      box-shadow: none;
     }
 
     #flipbook .page img {
       width: 100%;
-      height: auto;
+      height: 100%;
+      object-fit: cover; /* Giữ tỉ lệ hình ảnh */
       display: block;
-      margin: 0; /* Loại bỏ margin nếu có */
+      margin: 0;
+    }
+
+    /* Loại bỏ khoảng trống thừa */
+    .turn-page {
+      overflow: hidden !important; /* Loại bỏ thanh cuộn */
+    }
+
+    /* Điều chỉnh cho màn hình nhỏ */
+    @media (max-width: 767px) {
+      #flipbook {
+        width: 100%;
+        height: 100vh; /* Chiếm toàn bộ chiều cao */
+      }
+
+      .page img {
+        object-fit: contain; /* Thay vì cover để tránh cắt hình ảnh */
+      }
     }
   </style>
 </head>
@@ -67,16 +85,16 @@
     <div class="page"><img src="images/21.jpg" alt="Page 21"></div>
     <div class="page"><img src="images/22.jpg" alt="Page 22"></div>
     </div>
-    <script>
+   <script>
     $(document).ready(function() {
       function updateDisplay() {
         var width = $(window).width();
-        var displayMode = (width < 1024) ? 'single' : 'double'; // Hiển thị đơn hoặc kép tùy vào kích thước màn hình
+        var displayMode = (width < 768) ? 'single' : 'double'; // Chế độ đơn cho màn hình nhỏ
 
         $("#flipbook").turn({
           width: width,
           height: $(window).height(), // Đảm bảo chiều cao phù hợp
-          autoCenter: true,
+          autoCenter: true, // Tự động căn giữa
           display: displayMode, // Cập nhật chế độ hiển thị
           gradients: true,
           duration: 1000,
