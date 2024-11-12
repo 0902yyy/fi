@@ -23,8 +23,7 @@ $(document).ready(function() {
      // Khi bấm nút "previous", lật trang với hiệu ứng cuộn góc
     $('.prev').click(function() {
       $('#flipbook').turn('previous');  // Lật trang trước
-      setTimeout(function() {
-        $('#flipbook').turn('stop');   // Dừng lại sau khi lật xong
+     
       }, 800); // Thời gian trễ phù hợp với thời gian lật trang
     });
 
@@ -32,8 +31,7 @@ $(document).ready(function() {
     $('.next').click(function() {
       $('#flipbook').turn('next');  // Lật trang sau
       setTimeout(function() {
-        $('#flipbook').turn('stop');   // Dừng lại sau khi lật xong
-      }, 800); // Thời gian trễ phù hợp với thời gian lật trang
+     
     });
   } else {
     console.error("Turn.js chưa được tải đúng.");
