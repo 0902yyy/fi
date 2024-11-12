@@ -51,14 +51,27 @@ html, body {
     object-fit: contain; /* Đảm bảo ảnh không bị biến dạng */
 }
 
-/* Responsive: Đối với màn hình nhỏ (di động) */
-@media (max-width: 768px) {
-    #flipbook {
-        width: 90%; /* Chiếm 90% chiều rộng màn hình */
-        height: auto; /* Giữ tỷ lệ cho flipbook */
+ /* Điều chỉnh hiển thị cho điện thoại */
+    @media (max-width: 767px) {
+      #flipbook {
+        margin-top: 0;
+        margin-bottom: 0;
+        padding: 0;
+      }
+
+      #flipbook .page {
+        width: 100%;
+        height: 100%;
+      }
     }
 
-    /* Giảm kích thước của các vùng nhạy cảm */
+    /* Điều chỉnh cho máy tính */
+    @media (min-width: 768px) {
+      #flipbook {
+        margin-top: 0;
+        margin-bottom: 0;
+        padding: 0;
+      }
     .page .left, .page .right {
         width: 50%;
     }
