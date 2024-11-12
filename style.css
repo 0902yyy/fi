@@ -53,5 +53,39 @@
             height: 100%;
             overflow: hidden;
         }
+.buttons {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.nav-button {
+  background-color: #ff66b2;  /* Màu hồng */
+  border: none;
+  color: white;
+  font-size: 30px;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 50%; /* Tạo hình tròn cho các nút */
+  width: 50px;
+  height: 50px;
+  display: inline-block;
+  margin: 0 20px;
+  transition: background-color 0.3s;
+}
+
+.nav-button:hover {
+  background-color: #ff3385; /* Màu hồng đậm khi hover */
+}
+
+/* Định vị trí của các nút */
+.prev {
+  position: relative;
+  left: -60px; /* Nút trước di chuyển sang trái */
+}
+
+.next {
+  position: relative;
+  right: -60px; /* Nút sau di chuyển sang phải */
+}
     </style>
 </head>
