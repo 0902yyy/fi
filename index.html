@@ -6,12 +6,12 @@
     <title>Flipbook with Turn.js</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/turn.js/4.1.0/turn.min.css">
     <style>
-        /* Đảm bảo Flipbook chiếm toàn bộ màn hình */
+        /* Đảm bảo Flipbook chiếm toàn bộ màn hình và không có cuộn ngang */
         body, html {
             margin: 0;
             padding: 0;
-            overflow: hidden;
             height: 100%;
+            overflow: hidden;
         }
 
         #flipbook {
@@ -20,6 +20,14 @@
             width: 100%;
             height: 100%;
             overflow: hidden;
+        }
+
+        .page {
+            background: #fff;
+            border: 1px solid #ccc;
+            display: inline-block;
+            width: 100%;
+            height: 100%;
         }
     </style>
 </head>
@@ -49,22 +57,21 @@
     <div class="page"><img src="images/21.jpg" alt="Page 21"></div>
     <div class="page"><img src="images/22.jpg" alt="Page 22"></div>
     
-  </div>
+ </div>
+
 <!-- Include jQuery and Turn.js -->
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/turn.js/4.1.0/turn.min.js"></script>
 
 <script>
     $(document).ready(function() {
-        // Kiểm tra thiết bị di động
         var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
 
-        // Cấu hình cho Turn.js
         var flipbookOptions = {
-            width: isMobile ? $(window).width() - 20 : 800,  // Đặt kích thước cho di động và desktop
+            width: isMobile ? $(window).width() - 20 : 800,  // Kích thước tự động cho mobile và desktop
             height: isMobile ? $(window).height() - 20 : 600,
-            display: isMobile ? 'single' : 'double',  // Hiển thị một trang cho di động, hai trang cho desktop
-            mobile: isMobile,  // Kích hoạt chế độ cảm ứng cho di động
+            display: isMobile ? 'single' : 'double',  // Hiển thị một trang cho mobile, hai trang cho desktop
+            mobile: isMobile,
             autoCenter: true,  // Căn giữa flipbook
             duration: 1000,    // Thời gian chuyển trang
             gradients: true,   // Hiệu ứng gradient
