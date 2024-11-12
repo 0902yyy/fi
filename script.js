@@ -1,34 +1,45 @@
 $(document).ready(function() {
   // Kiểm tra Turn.js đã được tải chưa
   if ($.isFunction($.fn.turn)) {
-    // Kiểm tra thiết bị là mobile hay desktop
-    const isMobile = $(window).width() <= 768;
+    function initFlipbook() {
+      const isMobile = $(window).width() <= 768;
 
-    // Lấy kích thước cho flipbook tùy theo thiết bị
-    const flipbookWidth = isMobile ? $(window).width() * 0.8 : 1000;  // Mobile: 80% chiều rộng màn hình, Desktop: cố định
-    const flipbookHeight = isMobile ? $(window).width() * 0.8 : 500;  // Mobile: hình vuông, Desktop: chiều cao cố định
+      // Lấy kích thước cho flipbook tùy theo thiết bị
+      const flipbookWidth = isMobile ? $(window).width() * 0.8 : 1000;
+      const flipbookHeight = isMobile ? $(window).width() * 0.8 : 500;
 
-    // Khởi tạo Turn.js
-    $('#flipbook').turn({
-      width: flipbookWidth,      // Đặt chiều rộng flipbook
-      height: flipbookHeight,    // Đặt chiều cao flipbook
-      autoCenter: true,          // Tự động căn giữa flipbook
-      display: isMobile ? 'single' : 'double',  // Mobile: 1 trang, Desktop: 2 trang
-      acceleration: true,        // Tăng tốc để mượt mà hơn
-      gradients: true,           // Hiệu ứng gradient khi lật
-      duration: 800,             // Thời gian lật trang,
+      // Khởi tạo Turn.js
+      $('#flipbook').turn({
+        width: flipbookWidth,
+        height: flipbookHeight,
+        autoCenter: true,
+        display: isMobile ? 'single' : 'double',
+        acceleration: true,
+        gradients: true,
+        duration: 800
+      });
+    }
+
+    // Khởi tạo flipbook ban đầu
+    initFlipbook();
+
+    // Thay đổi chế độ hiển thị khi thay đổi kích thước màn hình
+    $(window).resize(function() {
+      if ($('#flipbook').data('turn')) {
+        $('#flipbook').turn('destroy').remove();
+        $('body').append('<div id="flipbook"> ... </div>'); // Thêm lại phần nội dung cần thiết vào flipbook
+        initFlipbook(); // Khởi tạo lại flipbook với kích thước mới
+      }
     });
 
-     // Khi bấm nút "previous", lật trang với hiệu ứng cuộn góc
+    // Khi bấm nút "previous"
     $('.prev').click(function() {
-      $('#flipbook').turn('previous');  // Lật trang trước
+      $('#flipbook').turn('previous');
     });
 
-    // Khi bấm nút "next", lật trang với hiệu ứng cuộn góc
+    // Khi bấm nút "next"
     $('.next').click(function() {
-      $('#flipbook').turn('next');  // Lật trang sau
-
-     
+      $('#flipbook').turn('next');
     });
   } else {
     console.error("Turn.js chưa được tải đúng.");
