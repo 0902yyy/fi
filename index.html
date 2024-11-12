@@ -1,74 +1,12 @@
+<!DOCTYPE html>
 <html lang="vi">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>PDF Flipbook</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css"> <!-- Liên kết đến file CSS -->
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <script src="turn.js"></script>
-  <style>
-    body, html {
-      margin: 0;
-      padding: 0;
-      height: 100%;
-      overflow: hidden;
-    }
-
-    #flipbook {
-      width: 100%;
-      height: 100%;
-      margin: 0;
-      padding: 0;
-      background-color: #fff;
-      position: relative;
-      box-sizing: border-box;
-    }
-
-    #flipbook .page {
-      width: 100%;
-      height: 100%;
-      margin: 0;
-      padding: 0;
-      background-color: #fff;
-      box-shadow: none;
-      display: inline-block;
-    }
-
-    #flipbook .page img {
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
-      display: block;
-      margin: 0;
-    }
-
-    /* Điều chỉnh hiển thị cho điện thoại */
-    @media (max-width: 767px) {
-      #flipbook {
-        margin-top: 0;
-        margin-bottom: 0;
-        padding: 0;
-      }
-
-      #flipbook .page {
-        width: 100%;
-        height: 100%;
-      }
-    }
-
-    /* Điều chỉnh cho máy tính */
-    @media (min-width: 768px) {
-      #flipbook {
-        margin-top: 0;
-        margin-bottom: 0;
-        padding: 0;
-      }
-
-      #flipbook .page {
-        width: 50%; /* Hai trang hiển thị */
-      }
-    }
-  </style>
+  <script src="turn.js"></script> <!-- Liên kết đến thư viện turn.js -->
 </head>
 <body>
   <div id="flipbook">
@@ -98,7 +36,7 @@
     </div>
     </div>
 
-  <script>
+ <script>
     $(document).ready(function() {
       function updateDisplay() {
         var width = $(window).width();
