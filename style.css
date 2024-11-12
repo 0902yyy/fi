@@ -1,9 +1,9 @@
-/* Container chứa các trang */
+/* Container chứa các trang lật */
 .flip-container {
-  perspective: 1000px; /* Tạo hiệu ứng 3D */
-  width: 500px; /* Điều chỉnh kích thước của container cho phù hợp với ảnh lớn */
+  perspective: 1500px; /* Tạo hiệu ứng 3D mạnh mẽ hơn */
+  width: 500px; /* Điều chỉnh kích thước container cho phù hợp với ảnh lớn */
   height: 700px;
-  overflow: hidden; /* Ẩn phần tử lộ ra ngoài container */
+  overflow: hidden; /* Ẩn phần tử vượt ra ngoài container */
   position: relative;
 }
 
@@ -46,9 +46,14 @@
   transform: rotateY(180deg); /* Lật trang */
 }
 
-/* Đảm bảo ảnh không bị co giãn hoặc bị mất phần */
+/* Ảnh trong các trang */
 .front img, .back img {
   width: 100%; /* Đảm bảo ảnh phủ đầy trang */
   height: 100%;
-  object-fit: contain; /* Hoặc cover nếu bạn muốn ảnh phủ đầy mà không bị méo */
+  object-fit: contain; /* Đảm bảo ảnh không bị cắt mà vẫn giữ tỷ lệ */
+}
+
+/* Thêm hiệu ứng hover để xem ảnh rõ hơn khi lật */
+.flip-container:hover .flip-page {
+  transform: rotateY(180deg); /* Lật trang khi hover */
 }
