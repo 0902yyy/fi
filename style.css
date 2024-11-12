@@ -1,49 +1,47 @@
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-color: #f4f4f4;
-    overflow: hidden;  /* Đảm bảo không có cuộn màn hình khi hiển thị flipbook */
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f4f4f4;
 }
 
 #flipbook {
-    background-color: #fff;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
 #flipbook .page {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 #flipbook img {
-    max-width: 100%;
-    max-height: 100%;
-    object-fit: contain; /* Đảm bảo ảnh không bị co kéo, giữ tỷ lệ gốc */
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain; /* Đảm bảo ảnh không bị co kéo, giữ tỷ lệ gốc */
 }
 
 @media (max-width: 768px) {
-    /* Đảm bảo flipbook có kích thước vuông trên mobile và căn giữa */
-    #flipbook {
-        width: 80vw;     /* Chiều rộng bằng 80% của viewport */
-        height: 80vw;    /* Chiều cao cũng bằng chiều rộng (tạo hình vuông) */
-        margin: auto;    /* Căn giữa flipbook */
-    }
-    #flipbook .page {
-        width: 100%;     /* Chiếm hết chiều rộng của flipbook */
-        height: 100%;    /* Chiếm hết chiều cao của flipbook */
-    }
+  #flipbook {
+    width: 80vw;     /* Chiều rộng bằng 80% của viewport */
+    height: 80vw;    /* Chiều cao cũng bằng chiều rộng (tạo hình vuông) */
+    margin: auto;    /* Căn giữa flipbook */
+  }
+
+  #flipbook .page {
+    width: 100%;     /* Chiếm hết chiều rộng của flipbook */
+    height: 100%;    /* Chiếm hết chiều cao của flipbook */
+  }
 }
 
 @media (min-width: 769px) {
-    /* Dành cho desktop */
-    #flipbook {
-        width: 80%;
-        height: 80vh;  /* Tùy chỉnh chiều cao cho desktop */
-    }
+  #flipbook {
+    width: 80%;
+    height: 80vh;  /* Tùy chỉnh chiều cao cho desktop */
+  }
 }
