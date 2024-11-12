@@ -15,8 +15,6 @@ body {
 }
 
 #flipbook .page {
-    width: 100%;  /* Đảm bảo các trang chiếm hết chiều rộng của flipbook */
-    height: 100%; /* Đảm bảo các trang chiếm hết chiều cao của flipbook */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -30,8 +28,12 @@ body {
 
 @media (max-width: 768px) {
     #flipbook {
-        width: 100%;
-        height: 70vh; /* Tùy chỉnh chiều cao cho thiết bị di động */
+        width: 80vw;     /* Chiều rộng theo phần trăm của viewport */
+        height: 80vw;    /* Chiều cao bằng với chiều rộng (tạo hình vuông) */
+    }
+    #flipbook .page {
+        width: 100%;     /* Chiếm hết chiều rộng của flipbook */
+        height: 100%;    /* Chiếm hết chiều cao của flipbook */
     }
 }
 
