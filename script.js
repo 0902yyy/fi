@@ -1,17 +1,12 @@
 $(document).ready(function() {
-  // Kiểm tra Turn.js đã được tải chưa
-  if ($.isFunction($.fn.turn)) {
     $('#flipbook').turn({
-        mobile: true, // Bật hỗ trợ di độn
-      width: 1000,           // Đặt chiều rộng flipbook
-      height: 500,           // Đặt chiều cao flipbook
-      autoCenter: true,      // Tự động căn giữa flipbook
-      display: 'double',     // Hiển thị 2 trang cùng lúc
-      acceleration: true,    // Tăng tốc để mượt mà hơn
-      gradients: true,       // Hiệu ứng gradient khi lật
-      duration: 800          // Thời gian lật trang
+        width: 800,                // Chiều rộng của Flipbook
+        height: 600,               // Chiều cao của Flipbook
+        autoCenter: true,          // Căn giữa flipbook
+        display: 'single',         // Hiển thị một trang tại một thời điểm
+        mobile: true,              // Kích hoạt chế độ cho điện thoại di động
+        duration: 1000,            // Thời gian cho mỗi lần lật trang
+        gradients: true,           // Hiệu ứng gradient cho lật trang
+        elevation: 50              // Độ sâu của lật trang
     });
-  } else {
-    console.error("Turn.js chưa được tải đúng.");
-  }
 });
