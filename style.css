@@ -6,6 +6,7 @@
   align-items: center;
   max-width: 1000px;
   margin: 0 auto;
+  perspective: 2000px; /* Tăng hiệu ứng 3D để giữ góc trang ổn định */
 }
 
 /* Flipbook chính */
@@ -15,7 +16,7 @@
   height: 500px;
   margin: 0 auto;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-  transform-style: preserve-3d; /* Giữ không gian 3D để tránh lệch trang */
+  transform-style: preserve-3d;
 }
 
 /* Thiết lập cho các trang */
@@ -25,7 +26,8 @@
   overflow: hidden;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  transform-style: preserve-3d; /* Duy trì cấu trúc 3D cho các trang */
+  transform-origin: center; /* Cố định góc trang */
+  transform-style: preserve-3d;
 }
 
 /* Ẩn bóng cho trang đầu và trang cuối */
@@ -41,6 +43,7 @@
   height: 100%;
   object-fit: cover;
   border-radius: 8px;
+  transform-origin: center; /* Cố định ảnh bên trong trang */
 }
 
 /* Nút điều khiển container */
