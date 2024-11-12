@@ -22,7 +22,6 @@ $(document).ready(function() {
      // Khi bấm nút "previous", lật trang với hiệu ứng cuộn góc
     $('.prev').click(function() {
       $('#flipbook').turn('previous');  // Lật trang trước
- hời gian trễ phù hợp với thời gian lật trang
     });
 
     // Khi bấm nút "next", lật trang với hiệu ứng cuộn góc
