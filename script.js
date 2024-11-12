@@ -22,7 +22,7 @@ $(document).ready(function() {
 
      // Khi bấm nút "previous", lật trang với hiệu ứng cuộn góc
     $('.prev').click(function() {
-      $('#flipbook').turn('previous',800);  // Lật trang trước
+      $('#flipbook').turn('previous');  // Lật trang trước
       setTimeout(function() {
         $('#flipbook').turn('stop');   // Dừng lại sau khi lật xong
       }, 800); // Thời gian trễ phù hợp với thời gian lật trang
@@ -30,7 +30,7 @@ $(document).ready(function() {
 
     // Khi bấm nút "next", lật trang với hiệu ứng cuộn góc
     $('.next').click(function() {
-      $('#flipbook').turn('next',800);  // Lật trang sau
+      $('#flipbook').turn('next');  // Lật trang sau
       setTimeout(function() {
         $('#flipbook').turn('stop');   // Dừng lại sau khi lật xong
       }, 800); // Thời gian trễ phù hợp với thời gian lật trang
