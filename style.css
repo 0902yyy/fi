@@ -47,6 +47,7 @@
             justify-content: center;
             background-color: white;         /* Đặt màu nền trắng cho trang */
             position: relative;              /* Đảm bảo nội dung không bị lệch */
+            object-fit: cover;
         }
 
         /* Đảm bảo ảnh trong các trang vừa khít */
@@ -85,10 +86,10 @@
 /* Định vị trí của các nút */
 .prev {
   position: relative;
-  left: -90px; /* Nút trước di chuyển sang trái */
+  left: -100px; /* Nút trước di chuyển sang trái */
 }
 
 .next {
   position: relative;
-  right: -90px; /* Nút sau di chuyển sang phải */
+  right: -100px; /* Nút sau di chuyển sang phải */
 }
