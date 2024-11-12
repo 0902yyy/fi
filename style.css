@@ -20,21 +20,16 @@
             position: relative;              /* Đảm bảo vị trí của flipbook */
             margin: 0 auto;                  /* Căn giữa flipbook */
         }
-#flipbook .page:first-child,
-#flipbook .page:last-child {
-  box-shadow: none; /* Không có bóng đổ cho trang đầu và cuối */
-}
-
 
         /* Đảm bảo trang đầu là hình vuông */
-        #flibook .page:first-child {
+        #flipbook .page:first-child {
             width: 500px;                    /* Đặt kích thước mong muốn */
             height: 500px;
             box-shadow: none/* Đảm bảo trang đầu là hình vuông */
             overflow: hidden;
             margin: auto;                    /* Căn giữa trang đầu */
         }
-#flibook .page:last-child {
+#flipbook .page:last-child {
             width: 500px;                    /* Đặt kích thước mong muốn */
             height: 500px;
             box-shadow: none/* Đảm bảo trang đầu là hình vuông */
