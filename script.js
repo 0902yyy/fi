@@ -16,7 +16,8 @@ $(document).ready(function() {
       display: isMobile ? 'single' : 'double',  // Mobile: 1 trang, Desktop: 2 trang
       acceleration: true,        // Tăng tốc cho hiệu ứng mượt mà hơn
       gradients: true,           // Hiệu ứng gradient khi lật
-      duration: 800              // Thời gian lật trang
+      duration: 900              // Thời gian lật trang
+      page: 1
      
     });
 
