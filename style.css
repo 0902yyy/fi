@@ -1,8 +1,8 @@
 /* Container chứa các trang lật */
 .flip-container {
   perspective: 1500px; /* Tạo hiệu ứng 3D mạnh mẽ hơn */
-  width: 500px; /* Điều chỉnh kích thước container cho phù hợp với ảnh lớn */
-  height: 700px;
+  width: 100%; /* Điều chỉnh kích thước container cho phù hợp với ảnh lớn */
+  height: 100%;
   overflow: hidden; /* Ẩn phần tử vượt ra ngoài container */
   position: relative;
 }
