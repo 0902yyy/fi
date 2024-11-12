@@ -3,7 +3,7 @@ $(document).ready(function() {
   if ($.isFunction($.fn.turn)) {
     $('#flipbook').turn({
       width: 1000,           // Đặt chiều rộng flipbook
-      height: 100%,           // Đặt chiều cao flipbook
+      height: 500,           // Đặt chiều cao flipbook
       autoCenter: true,      // Tự động căn giữa flipbook
       display: 'double',     // Hiển thị 2 trang cùng lúc
       acceleration: true,    // Tăng tốc để mượt mà hơn
