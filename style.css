@@ -1,74 +1,31 @@
-/* General styles */
-body, html {
-    margin: 0;
-    padding: 0;
-    height: 100%;
-    background-color: #f4f4f4;
-    overflow: hidden;
-}
-
-/* Wrapper to center the flipbook */
+/* Wrapper cho flipbook */
 .wrapper {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    padding: 10px;
-}
-
-/* Aspect ratio container */
-.aspect {
     position: relative;
     width: 100%;
-    max-width: 800px; /* Max width for better control on desktop */
-    height: auto;
-    padding-bottom: 60%; /* Aspect ratio of 2:3 for the book */
-}
-
-/* Inner container that holds the flipbook */
-.aspect-inner {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
+    height: 100vh;  /* Đảm bảo full screen */
+    overflow: hidden;  /* Ẩn phần vượt quá */
 }
 
 /* Flipbook container */
 .flipbook {
     width: 100%;
     height: 100%;
-    -webkit-transform-style: preserve-3d;
-    transform-style: preserve-3d;
-    display: flex;
-    -webkit-user-select: none;
-    user-select: none;
-    position: relative;
-    z-index: 1; /* Ensure flipbook pages are interactive */
+    position: absolute;  /* Đảm bảo phủ toàn bộ */
+    z-index: 1;  /* Đảm bảo được bao phủ */
 }
 
-/* Each page */
+/* Các trang */
 .flipbook .page {
-    width: 50%; /* Show two pages side by side */
+    width: 50%;  /* Hiển thị hai trang cùng một lúc */
     height: 100%;
     position: relative;
-    z-index: 2; /* Ensure pages are above background */
+    z-index: 2;  /* Đảm bảo các trang luôn ở trên */
+    cursor: pointer; /* Thêm con trỏ để người dùng biết có thể tương tác */
 }
 
-/* Page images */
+/* Hình ảnh trang */
 .flipbook .page img {
     width: 100%;
     height: 100%;
-    object-fit: contain;
-    display: block;
-}
-
-/* Adjust for small screens */
-@media (max-width: 768px) {
-    .aspect {
-        padding-bottom: 100%; /* Adjust aspect ratio for mobile */
-    }
-    .flipbook .page {
-        width: 100%; /* Show one page at a time on mobile */
-    }
+    object-fit: cover;
 }
