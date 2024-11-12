@@ -4,9 +4,12 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center; /* Căn giữa theo chiều dọc */
   max-width: 1000px;
   margin: 0 auto;
+  height: 100vh; /* Đảm bảo container chiếm toàn bộ chiều cao màn hình */
 }
+
 
 /* Flipbook chính */
 #flipbook {
