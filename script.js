@@ -9,9 +9,6 @@ $(document).ready(function() {
     const flipbookHeight = isMobile ? $(window).width() * 0.8 : 500;  // Mobile: hình vuông, Desktop: chiều cao cố định
 
     // Khởi tạo Turn.js
-    $(document).ready(function() {
-  // Kiểm tra Turn.js đã được tải chưa
-  if ($.isFunction($.fn.turn)) {
     $('#flipbook').turn({
       width: 1000,               // Đặt chiều rộng flipbook
       height: 500,               // Đặt chiều cao flipbook
