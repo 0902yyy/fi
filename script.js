@@ -21,4 +21,16 @@ $(document).ready(function() {
   } else {
     console.error("Turn.js chưa được tải đúng.");
   }
+ 
+  // Xử lý sự kiện khi nhấn nút Previous
+  $('#prevPage').click(function() {
+    $('#flipbook').turn('previous');  // Lật về trang trước
+  });
+
+  // Xử lý sự kiện khi nhấn nút Next
+  $('#nextPage').click(function() {
+    $('#flipbook').turn('next');      // Lật đến trang sau
+  });
 });
+
+
