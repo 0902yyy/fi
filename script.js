@@ -4,19 +4,17 @@ $(document).ready(function() {
     function initializeFlipbook() {
       const isMobile = $(window).width() <= 768;
       $('#flipbook').turn({
-        width: $(window).width() * 0.8,   // Lấy chiều rộng động
-        height: $(window).height() * 0.6, // Lấy chiều cao động
+        width: isMobile ? $(window).width() * 0.8 : $(window).width() * 0.8,   // Lấy chiều rộng động
+        height: isMobile ? $(window).width() * 0.8 : $(window).height() * 0.6, // Lấy chiều cao động
         autoCenter: true,                 // Tự động căn giữa flipbook
         display: isMobile ? 'single' : 'double', // Thay đổi display tùy theo kích thước màn hình
         acceleration: true,               // Tăng tốc để mượt mà hơn
         gradients: true,                  // Hiệu ứng gradient khi lật
         duration: 800,                    // Thời gian lật trang
         when: {
-          // Đảm bảo khi flipbook đã sẵn sàng, các ảnh được hiển thị đúng
           turning: function(event, page, view) {
             var pages = $(this).turn('pages');
             if (page == 1) {
-              // Đảm bảo trang đầu tiên được căn giữa
               $(this).turn('center');
             }
           }
