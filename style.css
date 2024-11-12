@@ -9,8 +9,9 @@ body {
 }
 
 #flipbook {
-  width: 80%;
-  height: 80vh;
+  width: 800px;       /* Kích thước phù hợp cho desktop */
+  height: 500px;      /* Kích thước phù hợp cho desktop */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Đổ bóng cho flipbook */
 }
 
 .page {
@@ -27,6 +28,7 @@ body {
   height: auto;
 }
 
+/* Responsive trên thiết bị di động */
 @media (max-width: 768px) {
   #flipbook {
     width: 100%;
