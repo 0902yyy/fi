@@ -1,40 +1,46 @@
 $(document).ready(function() {
-    // Initialize the flipbook with Turn.js
+    // Khởi tạo flipbook với Turn.js
     var $flipbook = $("#flipbook");
 
-    // Function to resize the flipbook and adjust the size of pages
+    // Hàm resize flipbook để giữ tỷ lệ
     function resizeFlipbook() {
         var width = $(window).width();
         var height = $(window).height();
 
-        // Set the aspect ratio of the pages (2:3 aspect ratio in this example)
+        // Set tỷ lệ của trang (ví dụ: tỷ lệ 2:3)
         var aspectRatio = 2 / 3;
 
-        // Calculate new width and height based on the window size and aspect ratio
+        // Tính toán lại chiều rộng và chiều cao phù hợp
         if (width / height > aspectRatio) {
-            // If the window is too wide, set the height based on width
+            // Nếu màn hình rộng quá, set chiều cao theo chiều rộng
             height = width / aspectRatio;
         } else {
-            // If the window is too tall, set the width based on height
+            // Nếu màn hình cao quá, set chiều rộng theo chiều cao
             width = height * aspectRatio;
         }
 
-        // Resize the flipbook container
+        // Resize container flipbook
         $flipbook.turn('size', width, height);
     }
 
-    // Call the resize function when the page loads
-    resizeFlipbook();
-
-    // Handle window resize event
+    // Lắng nghe sự kiện resize của cửa sổ
     $(window).resize(function() {
         resizeFlipbook();
     });
 
-    // Initialize the flipbook with Turn.js
+    // Khởi tạo flipbook với Turn.js
     $flipbook.turn({
-        autoCenter: true,
-        display: 'double', // This will display two pages at a time, enabling the flip effect.
-        acceleration: true // To make sure the effect is smoother.
+        autoCenter: true, // Căn giữa trang
+        display: 'double', // Hiển thị 2 trang cùng một lúc để tạo hiệu ứng lật
+        acceleration: true, // Tăng tốc hiệu ứng lật trang
+        duration: 1000, // Thời gian lật trang
+        when: {
+            turning: function(event, page, view) {
+                console.log('Page ' + page + ' turned');
+            }
+        }
     });
+
+    // Gọi resize ngay từ đầu
+    resizeFlipbook();
 });
