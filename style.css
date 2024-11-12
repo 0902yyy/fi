@@ -46,6 +46,7 @@ body {
   #flipbook {
     width: 80%;
     height: 80vh;  /* Tùy chỉnh chiều cao cho desktop */
+    position: relative; /* Để căn vị trí của nút ở dưới flipbook */
   }
 }
 
