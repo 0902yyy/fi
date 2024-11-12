@@ -6,7 +6,9 @@ html, body {
     justify-content: center;
     align-items: center;
     background-color: #f0f0f0;
+    overflow: hidden; /* Ẩn thanh cuộn toàn cục */
 }
+
 
 /* Đặt kích thước cho flipbook và cho phép co giãn */
 #flipbook {
@@ -16,6 +18,7 @@ html, body {
     position: relative;
     max-width: 100%; /* Giới hạn chiều rộng tối đa */
     max-height: 100%; /* Giới hạn chiều cao tối đa */
+    overflow: hidden;
 }
 
 /* Đảm bảo các trang sẽ hiển thị đúng trên mọi màn hình */
@@ -38,6 +41,7 @@ html, body {
     height: 100%;
     cursor: pointer;
     z-index: 10;
+    overflow: hidden;
 }
 
 /* Điều chỉnh kích thước ảnh trong flipbook */
