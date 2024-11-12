@@ -11,54 +11,55 @@
 /* Flipbook chính */
 #flipbook {
   width: 100%;
-  max-width: 1000px; /* Điều chỉnh kích thước flipbook theo nhu cầu */
+  max-width: 1000px;
   height: 500px;
-  margin: 0 auto; /* Căn giữa flipbook */
+  margin: 0 auto;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  transform-style: preserve-3d; /* Giữ không gian 3D để tránh lệch trang */
 }
 
 /* Thiết lập cho các trang */
 #flipbook .page {
   width: 100%;
   height: 100%;
-  overflow: hidden; /* Ẩn nội dung tràn ra ngoài */
-  border-radius: 8px; /* Bo góc cho trang */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Bóng mờ cho các trang */
-  position: relative; /* Cố định vị trí các trang */
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transform-style: preserve-3d; /* Duy trì cấu trúc 3D cho các trang */
 }
 
 /* Ẩn bóng cho trang đầu và trang cuối */
 #flipbook .page:first-child,
 #flipbook .page:last-child {
-  box-shadow: none; /* Không có bóng */
-  margin: 0 auto; /* Căn giữa trang đầu và trang cuối */
+  box-shadow: none;
+  margin: 0 auto;
 }
 
 /* Đặt hình ảnh bên trong trang */
 #flipbook .page img {
   width: 100%;
   height: 100%;
-  object-fit: cover; /* Đảm bảo ảnh không bị méo */
-  border-radius: 8px; /* Bo góc hình ảnh bên trong trang */
+  object-fit: cover;
+  border-radius: 8px;
 }
 
 /* Nút điều khiển container */
 .button-container {
   display: flex;
-  justify-content: center; /* Căn giữa các nút */
-  margin-top: 15px; /* Khoảng cách giữa các nút và flipbook */
+  justify-content: center;
+  margin-top: 15px;
 }
 
 /* Thiết lập nút điều khiển */
-.nav-button {
-  background: none; /* Xóa nền của nút */
+.flip-button {
+  background: none;
   border: none;
-  color: #FF3177; /* Màu của mũi tên */
-  font-size: 24px; /* Kích thước mũi tên */
+  color: #FF3177;
+  font-size: 24px;
   cursor: pointer;
-  margin: 0 15px; /* Khoảng cách giữa các nút */
+  margin: 0 15px;
 }
 
-.nav-button:focus {
-  outline: none; /* Xóa viền khi chọn nút */
+.flip-button:focus {
+  outline: none;
 }
