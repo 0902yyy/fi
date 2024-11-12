@@ -21,6 +21,7 @@
             perspective: 1500px; /* Thêm hiệu ứng phối cảnh cho lật sách 3D */
             position: relative;              /* Đảm bảo vị trí của flipbook */
             margin: 0 auto;                  /* Căn giữa flipbook */
+            boder: 10px;
         }
 
         /* Đảm bảo trang đầu là hình vuông */
