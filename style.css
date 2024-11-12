@@ -3,7 +3,7 @@ body, html {
     margin: 0;
     padding: 0;
     height: 100%;
-    background-color: transparient;
+    background-color: #f4f4f4;
 }
 
 /* Wrapper to center the flipbook */
@@ -58,8 +58,5 @@ body, html {
 }
 
 /* Make sure flipbook works well on mobile */
-@media (max-width: 500px) {
-    .aspect {
-        padding-bottom: 80%; /* Adjust aspect ratio for smaller screens */
-    }
-}
+@media (max-width: 767px) {
+    .aspect 
