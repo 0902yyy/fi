@@ -4,6 +4,7 @@ body, html {
     padding: 0;
     height: 100%;
     background-color: #f4f4f4;
+    overflow: hidden;
 }
 
 /* Wrapper to center the flipbook */
@@ -12,14 +13,16 @@ body, html {
     justify-content: center;
     align-items: center;
     height: 100vh;
+    padding: 10px;
 }
 
 /* Aspect ratio container */
 .aspect {
     position: relative;
-    width: 90%;
-    height: 90%;
-    overflow: hidden;
+    width: 100%;
+    max-width: 900px; /* Max width for better control on desktop */
+    height: auto;
+    padding-bottom: 66.67%; /* Aspect ratio of 2:3 for the book */
 }
 
 /* Inner container that holds the flipbook */
@@ -37,19 +40,14 @@ body, html {
     height: 100%;
     -webkit-transform-style: preserve-3d;
     transform-style: preserve-3d;
-    transition: margin-left 0.25s ease-out;
-    -webkit-touch-callout: none;
-    -webkit-user-select: none;
-    -khtml-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
     display: flex;
+    -webkit-user-select: none;
+    user-select: none;
 }
 
 /* Each page */
 .flipbook .page {
-    width: 50%; /* For two pages at a time */
+    width: 50%; /* Show two pages side by side */
     height: 100%;
     position: relative;
 }
@@ -59,4 +57,15 @@ body, html {
     width: 100%;
     height: 100%;
     object-fit: contain;
+    display: block;
+}
+
+/* Adjust for small screens */
+@media (max-width: 768px) {
+    .aspect {
+        padding-bottom: 100%; /* Adjust aspect ratio for mobile */
+    }
+    .flipbook .page {
+        width: 100%; /* Show one page at a time on mobile */
+    }
 }
