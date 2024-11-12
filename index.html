@@ -12,12 +12,12 @@
       margin: 0;
       padding: 0;
       height: 100%;
-      overflow: hidden; /* Đảm bảo không có thanh cuộn */
+      overflow: hidden;
     }
 
     #flipbook {
       width: 100%;
-      height: 100vh; /* Chiếm toàn bộ chiều cao cửa sổ */
+      height: 100%;
       margin: 0;
       padding: 0;
       background-color: #fff;
@@ -36,26 +36,14 @@
     #flipbook .page img {
       width: 100%;
       height: 100%;
-      object-fit: cover; /* Giữ tỉ lệ hình ảnh */
+      object-fit: contain; /* Chế độ chứa ảnh không bị méo */
       display: block;
       margin: 0;
     }
 
     /* Loại bỏ khoảng trống thừa */
     .turn-page {
-      overflow: hidden !important; /* Loại bỏ thanh cuộn */
-    }
-
-    /* Điều chỉnh cho màn hình nhỏ */
-    @media (max-width: 767px) {
-      #flipbook {
-        width: 100%;
-        height: 100vh; /* Chiếm toàn bộ chiều cao */
-      }
-
-      .page img {
-        object-fit: contain; /* Thay vì cover để tránh cắt hình ảnh */
-      }
+      overflow: hidden !important;
     }
   </style>
 </head>
@@ -89,13 +77,18 @@
     $(document).ready(function() {
       function updateDisplay() {
         var width = $(window).width();
-        var displayMode = (width < 768) ? 'single' : 'double'; // Chế độ đơn cho màn hình nhỏ
+        var height = $(window).height();
 
+        // Tính kích thước phù hợp cho #flipbook
+        var bookWidth = width;
+        var bookHeight = height;
+
+        // Cập nhật lại kích thước cho flipbook dựa trên chiều cao và chiều rộng của cửa sổ
         $("#flipbook").turn({
-          width: width,
-          height: $(window).height(), // Đảm bảo chiều cao phù hợp
+          width: bookWidth,
+          height: bookHeight, // Điều chỉnh chiều cao cho phù hợp với chiều cao của trang
           autoCenter: true, // Tự động căn giữa
-          display: displayMode, // Cập nhật chế độ hiển thị
+          display: 'double', // Chế độ hiển thị trang đôi
           gradients: true,
           duration: 1000,
           acceleration: true,
