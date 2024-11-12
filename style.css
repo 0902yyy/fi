@@ -16,8 +16,6 @@
             height: 500px;                   /* Đặt chiều cao flipbook */
             background-color: transparient;       /* Đặt màu nền cho flipbook */
             box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3); /* Hiệu ứng bóng đổ */
-            transform: rotateY(60deg);
-            transform-style: preserve-3d;
             position: relative;              /* Đảm bảo vị trí của flipbook */
             margin: 0 auto;                  /* Căn giữa flipbook */
             boder-radius: 10px;
