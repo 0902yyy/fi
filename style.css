@@ -7,6 +7,7 @@ body {
     align-items: center;
     height: 100vh;
     background-color: #f4f4f4;
+    overflow: hidden;  /* Đảm bảo không có cuộn màn hình khi hiển thị flipbook */
 }
 
 #flipbook {
@@ -27,9 +28,11 @@ body {
 }
 
 @media (max-width: 768px) {
+    /* Đảm bảo flipbook có kích thước vuông trên mobile và căn giữa */
     #flipbook {
-        width: 80vw;     /* Chiều rộng theo phần trăm của viewport */
-        height: 80vw;    /* Chiều cao bằng với chiều rộng (tạo hình vuông) */
+        width: 80vw;     /* Chiều rộng bằng 80% của viewport */
+        height: 80vw;    /* Chiều cao cũng bằng chiều rộng (tạo hình vuông) */
+        margin: auto;    /* Căn giữa flipbook */
     }
     #flipbook .page {
         width: 100%;     /* Chiếm hết chiều rộng của flipbook */
@@ -38,8 +41,9 @@ body {
 }
 
 @media (min-width: 769px) {
+    /* Dành cho desktop */
     #flipbook {
         width: 80%;
-        height: 80vh; /* Tùy chỉnh chiều cao cho desktop */
+        height: 80vh;  /* Tùy chỉnh chiều cao cho desktop */
     }
 }
