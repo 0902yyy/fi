@@ -1,8 +1,8 @@
 /* Container chứa các trang */
 .flip-container {
   perspective: 1000px; /* Tạo hiệu ứng 3D */
-  width: 300px; /* Kích thước của container */
-  height: 400px;
+  width: 500px; /* Điều chỉnh kích thước của container cho phù hợp với ảnh lớn */
+  height: 700px;
   overflow: hidden; /* Ẩn phần tử lộ ra ngoài container */
   position: relative;
 }
@@ -18,6 +18,17 @@
 }
 
 /* Trang phía trước */
+.front, .back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  backface-visibility: hidden; /* Đảm bảo mặt sau không bị lộ */
+  overflow: hidden; /* Ngăn ảnh tràn ra ngoài */
+}
+
 .front {
   background-color: #f1f1f1;
   z-index: 2; /* Đảm bảo trang phía trước luôn ở trên */
@@ -33,4 +44,11 @@
 /* Khi trang được lật */
 .flip-container.flipped .flip-page {
   transform: rotateY(180deg); /* Lật trang */
+}
+
+/* Đảm bảo ảnh không bị co giãn hoặc bị mất phần */
+.front img, .back img {
+  width: 100%; /* Đảm bảo ảnh phủ đầy trang */
+  height: 100%;
+  object-fit: contain; /* Hoặc cover nếu bạn muốn ảnh phủ đầy mà không bị méo */
 }
