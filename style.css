@@ -47,7 +47,6 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            transform: rotateY(60deg);
             transform-style: preserve-3d;
             background-color: white;         /* Đặt màu nền trắng cho trang */
             position: relative;              /* Đảm bảo nội dung không bị lệch */
