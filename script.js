@@ -1,21 +1,16 @@
 $(document).ready(function() {
-  // Khởi tạo Flipbook với các thiết lập cải tiến
-  $("#flipbook").turn({
-    width: 800,          // Chiều rộng mặc định cho desktop
-    height: 500,         // Chiều cao mặc định cho desktop
-    autoCenter: true,
-    display: "double",   // Hiển thị 2 trang cùng lúc trên desktop
-    gradients: true,     // Hiệu ứng gradient khi lật trang
-    elevation: 50,       // Độ nổi trang khi lật
-    responsive: true     // Đảm bảo responsive
-  });
-
-  // Tự động điều chỉnh kích thước khi thay đổi kích thước cửa sổ
-  $(window).resize(function() {
-    const isMobile = $(window).width() < 768;
-    const newWidth = isMobile ? $(window).width() : 800;
-    const newHeight = isMobile ? $(window).height() * 0.7 : 500;
-
-    $("#flipbook").turn("size", newWidth, newHeight);
-  });
+  // Kiểm tra Turn.js đã được tải chưa
+  if ($.isFunction($.fn.turn)) {
+    $('#flipbook').turn({
+      width: 1000,           // Đặt chiều rộng flipbook
+      height: 500,           // Đặt chiều cao flipbook
+      autoCenter: true,      // Tự động căn giữa flipbook
+      display: 'double',     // Hiển thị 2 trang cùng lúc
+      acceleration: true,    // Tăng tốc để mượt mà hơn
+      gradients: true,       // Hiệu ứng gradient khi lật
+      duration: 800          // Thời gian lật trang
+    });
+  } else {
+    console.error("Turn.js chưa được tải đúng.");
+  }
 });
