@@ -17,7 +17,6 @@ $(document).ready(function() {
       acceleration: true,        // Tăng tốc cho hiệu ứng mượt mà hơn
       gradients: true,           // Hiệu ứng gradient khi lật
       duration: 900              // Thời gian lật trang
-      page: 1
      
     });
 
