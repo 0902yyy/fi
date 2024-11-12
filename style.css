@@ -1,27 +1,57 @@
-#flipbook {
-  width: 100%;
-  height: 500px;
-  max-width: 1000px;
-  max-height: 600px;
-  background-color: white;
-  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3);
-  position: relative;
-  overflow: hidden;
-}
+<head>
+    <style>
+        /* Đảm bảo toàn bộ trang căn giữa */
+        html, body {
+            height: 100%;                     /* Đảm bảo chiếm toàn bộ chiều cao */
+            margin: 0;                        /* Loại bỏ margin mặc định */
+            display: flex;                    /* Sử dụng flexbox để căn giữa */
+            justify-content: center;          /* Căn giữa theo chiều ngang */
+            align-items: center;              /* Căn giữa theo chiều dọc */
+            background-color: #f0f0f0;        /* Đặt nền cho toàn trang */
+        }
 
-.page {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: white;
-  position: relative;
-  overflow: hidden;
-}
+        /* Đặt kích thước và căn giữa flipbook */
+        #flipbook {
+            width: 1000px;                   /* Đặt chiều rộng flipbook */
+            height: 500px;                   /* Đặt chiều cao flipbook */
+            background-color: #f0f0f0;       /* Đặt màu nền cho flipbook */
+            box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3); /* Hiệu ứng bóng đổ */
+            position: relative;              /* Đảm bảo vị trí của flipbook */
+            margin: 0 auto;                  /* Căn giữa flipbook */
+        }
 
-.page img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
+        /* Đảm bảo trang đầu là hình vuông */
+        #magazine .page:first-child {
+            width: 500px;                    /* Đặt kích thước mong muốn */
+            height: 500px;                   /* Đảm bảo trang đầu là hình vuông */
+            overflow: hidden;
+            margin: auto;                    /* Căn giữa trang đầu */
+        }
+
+        /* Định dạng từng trang */
+        .page {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;                /* Đảm bảo ảnh không bị vượt ra ngoài trang */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: white;         /* Đặt màu nền trắng cho trang */
+            position: relative;              /* Đảm bảo nội dung không bị lệch */
+        }
+
+        /* Đảm bảo ảnh trong các trang vừa khít */
+        .page img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: cover;               /* Ảnh sẽ được căn chỉnh để vừa với khung mà không bị méo */
+        }
+
+        /* Đảm bảo các trang sau trang đầu có tỷ lệ phù hợp */
+        .page:nth-child(n+2) {
+            width: 100%;                     /* Tự động điều chỉnh kích thước trang */
+            height: 100%;
+            overflow: hidden;
+        }
+    </style>
+</head>
