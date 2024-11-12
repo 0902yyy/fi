@@ -1,44 +1,42 @@
 $(document).ready(function() {
     var $flipbook = $("#flipbook");
 
-    // Hàm resize flipbook để giữ tỷ lệ phù hợp trên tất cả các màn hình
+    // Hàm resize flipbook để nó chiếm toàn bộ màn hình
     function resizeFlipbook() {
         var width = $(window).width();
         var height = $(window).height();
-
-        // Set tỷ lệ của trang (ví dụ: tỷ lệ 2:3)
+        
+        // Điều chỉnh tỷ lệ cho flipbook
         var aspectRatio = 2 / 3;
 
-        // Tính toán lại chiều rộng và chiều cao phù hợp
         if (width / height > aspectRatio) {
-            // Nếu màn hình rộng quá, set chiều cao theo chiều rộng
-            height = width / aspectRatio;
+            height = width / aspectRatio;  // Điều chỉnh chiều cao nếu màn hình rộng
         } else {
-            // Nếu màn hình cao quá, set chiều rộng theo chiều cao
-            width = height * aspectRatio;
+            width = height * aspectRatio;  // Điều chỉnh chiều rộng nếu màn hình cao
         }
 
-        // Resize container flipbook
+        // Resize flipbook với kích thước vừa tính toán
         $flipbook.turn('size', width, height);
     }
 
-    // Lắng nghe sự kiện resize của cửa sổ
+    // Lắng nghe sự kiện resize
     $(window).resize(function() {
         resizeFlipbook();
     });
 
-    // Khởi tạo flipbook với Turn.js
+    // Khởi tạo flipbook với các hiệu ứng và tùy chọn
     $flipbook.turn({
-        autoCenter: true, // Căn giữa trang
-        display: 'double', // Hiển thị 2 trang cùng một lúc để tạo hiệu ứng lật
-        acceleration: true, // Tăng tốc hiệu ứng lật trang
-        duration: 1000, // Thời gian lật trang
+        autoCenter: true,  // Căn giữa flipbook tự động
+        display: 'double', // Hiển thị 2 trang cùng lúc
+        duration: 1000,    // Thời gian hiệu ứng lật
+        acceleration: true, // Tăng tốc lật
         when: {
             turning: function(event, page, view) {
+                // Bạn có thể xử lý sự kiện lật trang tại đây
                 console.log('Page ' + page + ' turned');
             },
             missing: function(event, pages) {
-                // Tự động thêm các trang mới khi cần
+                // Thêm các trang mới nếu thiếu
                 for (var i = 0; i < pages.length; i++) {
                     addPage(pages[i]);
                 }
@@ -46,6 +44,6 @@ $(document).ready(function() {
         }
     });
 
-    // Gọi resize ngay từ đầu
+    // Gọi resize flipbook ngay khi tải xong trang
     resizeFlipbook();
 });
