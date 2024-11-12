@@ -37,6 +37,7 @@
   height: 100%;
   object-fit: cover;
   transform-origin: center; /* Cố định ảnh bên trong trang */
+  position: relative; /* Để căn vị trí của nút ở dưới flipbook */
 }
 
 /* Nút điều khiển container */
@@ -47,7 +48,7 @@
   align-items: center; /
   margin-top: 15px;
   gap: 20px; /* Khoảng cách giữa các nút */
-  position: absolute;
+  position: relative;
   bottom: -50px; /* Điều chỉnh vị trí các nút dưới flipbook */
 }
 /* Thiết lập nút điều khiển */
@@ -64,3 +65,7 @@
   outline: none;
   color: #4600AF;
 }
+
+
+.nav-buttons {
+  text-align: center;
