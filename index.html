@@ -1,51 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Flipbook Example</title>
-    <link rel="stylesheet" href="style.css"> <!-- Liên kết đến file style.css nếu có -->
-    <style>
-        /* Đảm bảo trang chiếm toàn bộ màn hình và không có thanh cuộn ngang */
-        body, html {
-            margin: 0;
-            padding: 0;
-            height: 100%;
-            overflow: hidden;
-            display: flex;
-            justify-content: center; /* Căn giữa theo chiều ngang */
-            align-items: center; /* Căn giữa theo chiều dọc */
-        }
-
-        /* Container chứa flipbook */
-        #flipbook {
-            width: 100%;    /* Lấp đầy chiều rộng của màn hình */
-            height: 80vh;    /* Chiếm 80% chiều cao màn hình (hoặc theo ý bạn) */
-            max-width: 1000px; /* Đặt kích thước tối đa để tránh quá lớn */
-            max-height: 600px; /* Đặt kích thước tối đa để tránh quá lớn */
-            background-color: #fff;
-            border: 1px solid #ccc;
-            position: relative;
-            overflow: hidden;
-        }
-
-        /* Các trang trong flipbook */
-        .page {
-            background: #fff;
-            border: 1px solid #ccc;
-            display: inline-block;
-            width: 100%;
-            height: 100%;
-            box-sizing: border-box;
-        }
-
-        /* Đảm bảo ảnh trong các trang khớp với khung */
-        .page img {
-            width: 100%;
-            height: 100%;
-            object-fit: contain; /* Giữ tỷ lệ ảnh */
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PDF Flipbook</title>
+  <link rel="stylesheet" href="style.css"> <!-- Liên kết đến file CSS -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="turn.js"></script> <!-- Liên kết đến thư viện turn.js -->
 </head>
 <body>
   <div id="flipbook">
@@ -75,16 +36,7 @@
     
   </div>
 
-    <script src="turn.js"></script> <!-- Liên kết đến thư viện turn.js -->
-    <script>
-        $(document).ready(function() {
-            // Khởi tạo flipbook với turn.js
-            $('#flipbook').turn({
-                width: '100%',
-                height: '80vh',  // Điều chỉnh chiều cao để thích ứng với màn hình
-                autoCenter: true  // Căn giữa flipbook
-            });
-        });
-    </script>
+  <!-- Kết nối file JavaScript -->
+  <script src="script.js"></script>
 </body>
 </html>
