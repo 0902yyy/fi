@@ -1,3 +1,4 @@
+$(document).ready(function() {
 flipbook.turn({
 
         // Magazine width
