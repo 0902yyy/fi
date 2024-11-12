@@ -1,47 +1,57 @@
-html, body {
-    height: 100%;
-    margin: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #f0f0f0;
-}
+$(document).ready(function() {
+    var flipbook = $('#flipbook');
 
-#flipbook {
-    width: 90%;
-    height: 80%;
-    max-width: 1000px;
-    max-height: 600px;
-    background-color: #fff;
-    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3);
-    position: relative;
-    overflow: hidden;
-    margin: 0 auto;
-}
+    // Khởi tạo Turn.js
+    flipbook.turn({
+        width: '100%', // Chiều rộng tự động
+        height: '500px', // Chiều cao của flipbook
+        duration: 1000, // Thời gian lật trang
+        gradients: true, // Bật gradient cho lật trang
+        autoCenter: true, // Tự động căn giữa flipbook
+        elevation: 50, // Độ cao khi lật trang
+        pages: 12, // Số trang
+        display: 'double', // Mặc định hiển thị trang đôi
 
-.page {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: white;
-    position: relative;
-    overflow: hidden;
-}
+        when: {
+            turning: function(event, page, view) {
+                var book = $(this);
+                var currentPage = book.turn('page');
+                var pages = book.turn('pages');
 
-.page img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
+                // Cập nhật URI cho trang hiện tại
+                Hash.go('page/' + page).update();
+                disableControls(page); // Kiểm soát các nút điều hướng
+            },
+            turned: function(event, page, view) {
+                disableControls(page);
+                $(this).turn('center');
+                // Update giá trị thanh trượt nếu có
+                $('#slider').slider('value', getViewNumber($(this), page));
+            },
+            missing: function(event, pages) {
+                // Thêm các trang chưa có trong flipbook
+                for (var i = 0; i < pages.length; i++) {
+                    addPage(pages[i], $(this));
+                }
+            }
+        }
+    });
 
-/* Responsive adjustment */
-@media screen and (max-width: 600px) {
-    #flipbook {
-        width: 100%;
-        height: 100%;
-        max-width: none;
-        max-height: none;
+    // Xử lý thay đổi chế độ hiển thị trang (single/double) khi thay đổi kích thước cửa sổ
+    function checkWidth() {
+        var win = $(window);
+        if (win.width() >= 820) {
+            flipbook.turn('display', 'double'); // Hiển thị 2 trang
+        } else {
+            flipbook.turn('display', 'single'); // Hiển thị 1 trang
+        }
     }
-}
+
+    // Kiểm tra độ rộng ngay khi tải trang
+    checkWidth();
+
+    // Kiểm tra lại khi resize
+    $(window).resize(function() {
+        checkWidth();
+    });
+});
