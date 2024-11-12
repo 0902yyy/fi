@@ -22,6 +22,7 @@
       padding: 0;
       background-color: #fff;
       position: relative;
+      box-sizing: border-box;
     }
 
     #flipbook .page {
@@ -31,6 +32,7 @@
       padding: 0;
       background-color: #fff;
       box-shadow: none;
+      display: inline-block;
     }
 
     #flipbook .page img {
@@ -41,9 +43,27 @@
       margin: 0;
     }
 
-    /* Loại bỏ khoảng trống thừa */
+    /* Cải thiện trải nghiệm khi cuộn */
     .turn-page {
       overflow: hidden !important;
+    }
+
+    /* Các điều chỉnh khi hiển thị trên điện thoại */
+    @media (max-width: 767px) {
+      #flipbook {
+        margin-top: 0;
+        margin-bottom: 0;
+        padding: 0;
+      }
+    }
+
+    /* Điều chỉnh hiển thị cho máy tính */
+    @media (min-width: 768px) {
+      #flipbook {
+        margin-top: 0;
+        margin-bottom: 0;
+        padding: 0;
+      }
     }
   </style>
 </head>
@@ -86,12 +106,13 @@
         // Cập nhật lại kích thước cho flipbook dựa trên chiều cao và chiều rộng của cửa sổ
         $("#flipbook").turn({
           width: bookWidth,
-          height: bookHeight, // Điều chỉnh chiều cao cho phù hợp với chiều cao của trang
-          autoCenter: true, // Tự động căn giữa
+          height: bookHeight,
+          autoCenter: true,  // Tự động căn giữa flipbook
           display: 'double', // Chế độ hiển thị trang đôi
           gradients: true,
           duration: 1000,
           acceleration: true,
+          touch: true,  // Kích hoạt cảm ứng trên thiết bị di động
           when: {
             turning: function(event, page, view) {
               console.log("Trang đang lật: " + page);
