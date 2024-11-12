@@ -47,6 +47,8 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            transform: rotateY(60deg);
+            transform-style: preserve-3d;
             background-color: white;         /* Đặt màu nền trắng cho trang */
             position: relative;              /* Đảm bảo nội dung không bị lệch */
         }
@@ -87,10 +89,10 @@
 /* Định vị trí của các nút */
 .prev {
   position: relative;
-  left: -70px; /* Nút trước di chuyển sang trái */
+  left: -90px; /* Nút trước di chuyển sang trái */
 }
 
 .next {
   position: relative;
-  right: -70px; /* Nút sau di chuyển sang phải */
+  right: -90px; /* Nút sau di chuyển sang phải */
 }
