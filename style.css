@@ -6,7 +6,6 @@
   align-items: center;
   max-width: 1000px;
   margin: 0 auto;
-  perspective: 2000px; /* Tăng hiệu ứng 3D để giữ góc trang ổn định */
 }
 
 /* Flipbook chính */
@@ -42,10 +41,12 @@
 .button-container {
   display: flex;
   justify-content: center;
+  width: 100%;
   margin-top: 15px;
   gap: 20px; /* Khoảng cách giữa các nút */
+  position: absolute;
+  bottom: -50px; /* Điều chỉnh vị trí các nút dưới flipbook */
 }
-
 /* Thiết lập nút điều khiển */
 .nav-button {
   background: none;
