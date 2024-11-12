@@ -20,9 +20,9 @@ body, html {
 .aspect {
     position: relative;
     width: 100%;
-    max-width: 900px; /* Max width for better control on desktop */
+    max-width: 800px; /* Max width for better control on desktop */
     height: auto;
-    padding-bottom: 66.67%; /* Aspect ratio of 2:3 for the book */
+    padding-bottom: 60%; /* Aspect ratio of 2:3 for the book */
 }
 
 /* Inner container that holds the flipbook */
@@ -43,6 +43,8 @@ body, html {
     display: flex;
     -webkit-user-select: none;
     user-select: none;
+    position: relative;
+    z-index: 1; /* Ensure flipbook pages are interactive */
 }
 
 /* Each page */
@@ -50,6 +52,7 @@ body, html {
     width: 50%; /* Show two pages side by side */
     height: 100%;
     position: relative;
+    z-index: 2; /* Ensure pages are above background */
 }
 
 /* Page images */
