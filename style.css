@@ -43,10 +43,11 @@
   display: flex;
   justify-content: center;
   margin-top: 15px;
+  gap: 20px; /* Khoảng cách giữa các nút */
 }
 
 /* Thiết lập nút điều khiển */
-.flip-button {
+.nav-button {
   background: none;
   border: none;
   color: #FF3177;
@@ -55,6 +56,7 @@
   margin: 0 15px;
 }
 
-.flip-button:focus {
+.nav-button:focus {
   outline: none;
+  color: #4600AF;
 }
