@@ -2,7 +2,6 @@ $(document).ready(function() {
   // Kiểm tra Turn.js đã được tải chưa
   if ($.isFunction($.fn.turn)) {
     $('#flipbook').turn({
-       $('#flipbook').turn({
         mobile: true, // Bật hỗ trợ di độn
       width: 1000,           // Đặt chiều rộng flipbook
       height: 500,           // Đặt chiều cao flipbook
