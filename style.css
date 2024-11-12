@@ -1,57 +1,65 @@
-/* Wrapper căn giữa flipbook */
+/* General styles */
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background-color: #f4f4f4;
+}
+
+/* Wrapper to center the flipbook */
 .wrapper {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 90%;
-  margin: 5%;
-  width: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
 }
 
-/* Tạo tỷ lệ cho flipbook */
+/* Aspect ratio container */
 .aspect {
-  padding-bottom: 70%; /* Điều chỉnh tỷ lệ chiều cao so với chiều rộng */
-  position: relative;
-  width: 100%;
+    position: relative;
+    width: 90%;
+    height: 90%;
+    padding-bottom: 70%; /* Keeps aspect ratio of 2:3 (width:height) */
 }
 
-/* Cấu trúc bên trong để chứa flipbook */
+/* Inner container that holds the flipbook */
 .aspect-inner {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
 }
 
-/* Các trang của flipbook */
+/* Flipbook container */
 .flipbook {
-  height: 100%;
-  width: 100%;
-  -webkit-touch-callout: none;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  transition: margin-left 0.25s ease-out;
+    width: 100%;
+    height: 100%;
+    transition: margin-left 0.25s ease-out;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
-/* Cấu hình cho mỗi trang */
+/* Each page */
 .flipbook .page {
-  height: 100%;
-  width: 100%;
+    width: 100%;
+    height: 100%;
 }
 
-/* Đảm bảo hình ảnh không bị biến dạng */
+/* Page images */
 .flipbook .page img {
-  max-width: 100%;
-  height: 100%;
-  object-fit: contain;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
 }
 
-/* Điều chỉnh tỷ lệ trên màn hình nhỏ */
+/* Make sure flipbook works well on mobile */
 @media (max-width: 767px) {
-  .aspect {
-    padding-bottom: 80%; /* Thay đổi tỷ lệ cho thiết bị di động */
-  }
+    .aspect {
+        padding-bottom: 80%; /* Adjust aspect ratio for smaller screens */
+    }
 }
