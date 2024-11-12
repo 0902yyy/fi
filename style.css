@@ -21,9 +21,17 @@
         }
 
         /* Đảm bảo trang đầu là hình vuông */
-        #magazine .page:first-child {
+        #flibook .page:first-child {
             width: 500px;                    /* Đặt kích thước mong muốn */
-            height: 500px;                   /* Đảm bảo trang đầu là hình vuông */
+            height: 500px;
+            box-shadow: none/* Đảm bảo trang đầu là hình vuông */
+            overflow: hidden;
+            margin: auto;                    /* Căn giữa trang đầu */
+        }
+#flibook .page:last-child {
+            width: 500px;                    /* Đặt kích thước mong muốn */
+            height: 500px;
+            box-shadow: none/* Đảm bảo trang đầu là hình vuông */
             overflow: hidden;
             margin: auto;                    /* Căn giữa trang đầu */
         }
@@ -70,7 +78,7 @@
 }
 
 .nav-button:hover {
-  color: #FF1F5B;                /* Màu hồng đậm khi hover */
+  color: #C0F3FF;                /* Màu hồng đậm khi hover */
 }
 
 /* Định vị trí của các nút */
@@ -83,5 +91,3 @@
   position: relative;
   right: -60px; /* Nút sau di chuyển sang phải */
 }
-    </style>
-</head>
