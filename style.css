@@ -18,7 +18,6 @@
             box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3); /* Hiệu ứng bóng đổ */
             position: relative;              /* Đảm bảo vị trí của flipbook */
             margin: 0 auto;                  /* Căn giữa flipbook */
-            boder-radius: 10px;
         }
 
         /* Đảm bảo trang đầu là hình vuông */
@@ -46,7 +45,7 @@
             align-items: center;
             justify-content: center;
             background-color: white;         /* Đặt màu nền trắng cho trang */
-            position: absolute;             /* Đảm bảo nội dung không bị lệch */
+            position: relative;             /* Đảm bảo nội dung không bị lệch */
         }
 
         /* Đảm bảo ảnh trong các trang vừa khít */
