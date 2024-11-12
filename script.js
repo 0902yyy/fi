@@ -10,10 +10,10 @@ $(document).ready(function() {
 
     // Khởi tạo Turn.js
     $('#flipbook').turn({
-      width: 1000,               // Đặt chiều rộng flipbook
-      height: 500,               // Đặt chiều cao flipbook
+      width: flipbookWidth,      // Đặt chiều rộng flipbook
+      height: flipbookHeight,    // Đặt chiều cao flipbook
       autoCenter: true,          // Tự động căn giữa flipbook
-      display: 'double',         // Hiển thị 2 trang cùng lúc
+      display: isMobile ? 'single' : 'double',  // Mobile: 1 trang, Desktop: 2 trang
       acceleration: true,        // Tăng tốc để mượt mà hơn
       gradients: true,           // Hiệu ứng gradient khi lật
       duration: 800,             // Thời gian lật trang
