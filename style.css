@@ -24,6 +24,7 @@
   overflow: hidden; /* Ẩn nội dung tràn ra ngoài */
   border-radius: 8px; /* Bo góc cho trang */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Bóng mờ cho các trang */
+  position: relative; /* Cố định vị trí các trang */
 }
 
 /* Ẩn bóng cho trang đầu và trang cuối */
@@ -49,7 +50,7 @@
 }
 
 /* Thiết lập nút điều khiển */
-.flip-button {
+.nav-button {
   background: none; /* Xóa nền của nút */
   border: none;
   color: #FF3177; /* Màu của mũi tên */
@@ -58,6 +59,6 @@
   margin: 0 15px; /* Khoảng cách giữa các nút */
 }
 
-.flip-button:focus {
+.nav-button:focus {
   outline: none; /* Xóa viền khi chọn nút */
 }
