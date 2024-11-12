@@ -1,52 +1,65 @@
-html,
-body {
-  background-color: #efefef;
-  height: 100%;
-  margin: 0;
-  overflow: hidden;
+/* General styles */
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background-color: transparient;
 }
 
+/* Wrapper to center the flipbook */
 .wrapper {
-  align-items: center;
-  display: flex;
-  height: 90%;
-  justify-content: center;
-  margin: 5%;
-  width: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
 }
 
+/* Aspect ratio container */
 .aspect {
-  padding-bottom: 70%;
-  position: relative;
-  width: 100%;
+    position: relative;
+    width: 90%;
+    height: 90%;
+    overflow: hidden;
 }
 
+/* Inner container that holds the flipbook */
 .aspect-inner {
-  bottom: 0;
-  left: 0;
-  position: absolute;
-  right: 0;
-  top: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
 }
 
+/* Flipbook container */
 .flipbook {
-  height: 100%;
-  transition: margin-left 0.25s ease-out;
-  width: 100%;
-  -webkit-touch-callout: none;
-  -webkit-user-select: none;
-  -khtml-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
+    width: 100%;
+    height: 100%;
+    transition: margin-left 0.25s ease-out;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
+/* Each page */
 .flipbook .page {
-  height: 100%;
-  width: 100%;
+    width: 100%;
+    height: 100%;
 }
 
+/* Page images */
 .flipbook .page img {
-  max-width: 100%;
-  height: 100%;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+/* Make sure flipbook works well on mobile */
+@media (max-width: 500px) {
+    .aspect {
+        padding-bottom: 80%; /* Adjust aspect ratio for smaller screens */
+    }
 }
