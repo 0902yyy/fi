@@ -69,17 +69,15 @@
     </div>
     <script>
     $(document).ready(function() {
-      // Hàm để cập nhật kiểu hiển thị (single hoặc double) dựa vào kích thước màn hình
       function updateDisplay() {
-        var width = $(window).width();  // Lấy chiều rộng của cửa sổ trình duyệt
-        var displayMode = (width < 1024) ? 'single' : 'double'; // Dùng single cho màn hình nhỏ hơn 1024px
+        var width = $(window).width();
+        var displayMode = (width < 1024) ? 'single' : 'double'; // Hiển thị đơn hoặc kép tùy vào kích thước màn hình
 
-        // Khởi tạo flipbook với cấu hình tùy chỉnh
         $("#flipbook").turn({
-          width: 800,
-          height: 600,
+          width: width,
+          height: $(window).height(), // Đảm bảo chiều cao phù hợp
           autoCenter: true,
-          display: displayMode,  // Cập nhật kiểu hiển thị tùy theo kích thước màn hình
+          display: displayMode, // Cập nhật chế độ hiển thị
           gradients: true,
           duration: 1000,
           acceleration: true,
@@ -94,11 +92,10 @@
         });
       }
 
-      // Gọi hàm updateDisplay khi trang được tải và mỗi khi cửa sổ thay đổi kích thước
       updateDisplay();
       $(window).resize(function() {
-        $("#flipbook").turn('destroy');  // Hủy cấu hình cũ
-        updateDisplay();  // Cập nhật lại cấu hình mới
+        $("#flipbook").turn('destroy'); // Hủy cấu hình cũ
+        updateDisplay(); // Cập nhật lại cấu hình mới
       });
     });
   </script>
