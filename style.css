@@ -11,12 +11,20 @@
             overflow: hidden; /* Loại bỏ thanh kéo */
         }
 
+        /* Khung bao bọc flipbook để căn giữa */
+        #container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+
         /* Đặt kích thước và căn giữa flipbook */
         #flipbook {
-            width: 90vw; /* Đặt chiều rộng linh hoạt theo viewport */
-            height: 80vh; /* Đặt chiều cao linh hoạt theo viewport */
-            max-width: 1000px; /* Giới hạn chiều rộng tối đa */
-            max-height: 800px; /* Giới hạn chiều cao tối đa */
+            width: 1000px;                   /* Đặt chiều rộng flipbook cố định */
+            height: 500px;                   /* Đặt chiều cao flipbook cố định */
             background-color: #f0f0f0;
             box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3);
             position: relative;
@@ -24,8 +32,8 @@
 
         /* Đảm bảo trang đầu là hình vuông */
         #flipbook .page:first-child {
-            width: 50%;
-            height: 100%;
+            width: 500px;                    /* Đặt kích thước mong muốn */
+            height: 500px;                   /* Đảm bảo trang đầu là hình vuông */
             overflow: hidden;
             margin: auto;
         }
@@ -50,4 +58,11 @@
         }
     </style>
 </head>
-
+<body>
+    <!-- Khung bao bọc để căn giữa flipbook -->
+    <div id="container">
+        <div id="flipbook">
+            <!-- Nội dung của flipbook -->
+        </div>
+    </div>
+</body>
