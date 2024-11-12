@@ -36,6 +36,12 @@ $(document).ready(function() {
         when: {
             turning: function(event, page, view) {
                 console.log('Page ' + page + ' turned');
+            },
+            missing: function(event, pages) {
+                // Tự động thêm các trang mới khi cần
+                for (var i = 0; i < pages.length; i++) {
+                    addPage(pages[i]);
+                }
             }
         }
     });
