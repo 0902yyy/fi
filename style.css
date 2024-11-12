@@ -1,68 +1,36 @@
-<head>
-    <style>
-        /* Đảm bảo toàn bộ trang căn giữa */
-        html, body {
-            height: 100%;
-            margin: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background-color: #f0f0f0;
-            overflow: hidden; /* Loại bỏ thanh kéo */
-        }
+/* Container chứa các trang */
+.flip-container {
+  perspective: 1000px; /* Tạo hiệu ứng 3D */
+  width: 300px; /* Kích thước của container */
+  height: 400px;
+  overflow: hidden; /* Ẩn phần tử lộ ra ngoài container */
+  position: relative;
+}
 
-        /* Khung bao bọc flipbook để căn giữa */
-        #container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            width: 100%;
-            height: 100%;
-            overflow: hidden;
-        }
+/* Đảm bảo phần tử này sử dụng không gian 3D */
+.flip-page {
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d; /* Giữ các phần tử con trong không gian 3D */
+  transition: transform 0.6s; /* Thời gian chuyển đổi khi lật */
+  position: absolute;
+  backface-visibility: hidden; /* Ẩn mặt sau khi lật */
+}
 
-        /* Đặt kích thước và căn giữa flipbook */
-        #flipbook {
-            width: 1000px;                   /* Đặt chiều rộng flipbook cố định */
-            height: 500px;                   /* Đặt chiều cao flipbook cố định */
-            background-color: #f0f0f0;
-            box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3);
-            position: relative;
-        }
+/* Trang phía trước */
+.front {
+  background-color: #f1f1f1;
+  z-index: 2; /* Đảm bảo trang phía trước luôn ở trên */
+}
 
-        /* Đảm bảo trang đầu là hình vuông */
-        #flipbook .page:first-child {
-            width: 500px;                    /* Đặt kích thước mong muốn */
-            height: 500px;                   /* Đảm bảo trang đầu là hình vuông */
-            overflow: hidden;
-            margin: auto;
-        }
+/* Trang phía sau */
+.back {
+  background-color: #ddd;
+  transform: rotateY(180deg); /* Lật mặt sau 180 độ */
+  z-index: 1; /* Trang sau ở dưới cùng */
+}
 
-        /* Định dạng từng trang */
-        .page {
-            width: 100%;
-            height: 100%;
-            overflow: hidden;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background-color: white;
-            position: relative;
-        }
-
-        /* Đảm bảo ảnh trong các trang vừa khít */
-        .page img {
-            max-width: 100%;
-            max-height: 100%;
-            object-fit: cover;
-        }
-    </style>
-</head>
-<body>
-    <!-- Khung bao bọc để căn giữa flipbook -->
-    <div id="container">
-        <div id="flipbook">
-            <!-- Nội dung của flipbook -->
-        </div>
-    </div>
-</body>
+/* Khi trang được lật */
+.flip-container.flipped .flip-page {
+  transform: rotateY(180deg); /* Lật trang */
+}
