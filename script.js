@@ -1,16 +1,11 @@
-$(document).ready(function() {
-    // Initialize the flipbook with Turn.js
-    $("#flipbook").turn({
-        autoCenter: true
-    });
+var flipbookEL = document.getElementById('flipbook');
 
-    // Handle window resize
-    var flipbookEL = document.getElementById('flipbook');
-    
-    window.addEventListener('resize', function () {
-        flipbookEL.style.width = '';
-        flipbookEL.style.height = '';
-        $(flipbookEL).turn('size', flipbookEL.clientWidth, flipbookEL.clientHeight);
-    });
+window.addEventListener('resize', function (e) {
+	flipbookEL.style.width = '';
+  flipbookEL.style.height = '';
+  $(flipbookEL).turn('size', flipbookEL.clientWidth, flipbookEL.clientHeight);
 });
 
+$(flipbookEL).turn({
+    autoCenter: true
+});
