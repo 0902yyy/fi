@@ -17,20 +17,26 @@ $(document).ready(function() {
       acceleration: true,        // Tăng tốc cho hiệu ứng mượt mà hơn
       gradients: true,           // Hiệu ứng gradient khi lật
       duration: 800              // Thời gian lật trang
+      page: 1,                   // Bắt đầu từ trang đầu
+      when: {
+        turning: function(event, page, view) {
+          // Đảm bảo rằng hiệu ứng "kéo góc" được kích hoạt
+          // Khi có sự kiện turning, Turn.js sẽ tự động xử lý hiệu ứng lật trang
+        }
+      }
+    });
+
+    // Khi bấm nút "previous", chuyển trang và giữ hiệu ứng lật
+    $('.prev').click(function() {
+      $('#flipbook').turn('previous'); // Lật trang trước
+    });
+
+    // Khi bấm nút "next", chuyển trang và giữ hiệu ứng lật
+    $('.next').click(function() {
+      $('#flipbook').turn('next'); // Lật trang sau
     });
   } else {
     console.error("Turn.js chưa được tải đúng.");
   }
- 
-  // Xử lý sự kiện khi nhấn nút Previous
-  $('#prevPage').click(function() {
-    $('#flipbook').turn('previous');  // Lật về trang trước
-  });
-
-  // Xử lý sự kiện khi nhấn nút Next
-  $('#nextPage').click(function() {
-    $('#flipbook').turn('next');      // Lật đến trang sau
-  });
 });
-
 
