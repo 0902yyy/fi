@@ -17,13 +17,7 @@ $(document).ready(function() {
       acceleration: true,        // Tăng tốc cho hiệu ứng mượt mà hơn
       gradients: true,           // Hiệu ứng gradient khi lật
       duration: 800              // Thời gian lật trang
-      page: 1,                   // Bắt đầu từ trang đầu
-      when: {
-        turning: function(event, page, view) {
-          // Đảm bảo rằng hiệu ứng "kéo góc" được kích hoạt
-          // Khi có sự kiện turning, Turn.js sẽ tự động xử lý hiệu ứng lật trang
-        }
-      }
+     
     });
 
     // Khi bấm nút "previous", chuyển trang và giữ hiệu ứng lật
