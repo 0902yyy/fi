@@ -33,9 +33,41 @@
     <div class="page"><img src="images/20.jpg" alt="Page 20"></div>
     <div class="page"><img src="images/21.jpg" alt="Page 21"></div>
     <div class="page"><img src="images/22.jpg" alt="Page 22"></div>
-    
+    </div>
+    <script>
+    $(document).ready(function() {
+      // Hàm để cập nhật kiểu hiển thị (single hoặc double) dựa vào kích thước màn hình
+      function updateDisplay() {
+        var width = $(window).width();  // Lấy chiều rộng của cửa sổ trình duyệt
+        var displayMode = (width < 1024) ? 'single' : 'double'; // Dùng single cho màn hình nhỏ hơn 1024px
 
+        // Khởi tạo flipbook với cấu hình tùy chỉnh
+        $("#flipbook").turn({
+          width: 800,
+          height: 600,
+          autoCenter: true,
+          display: displayMode,  // Cập nhật kiểu hiển thị tùy theo kích thước màn hình
+          gradients: true,
+          duration: 1000,
+          acceleration: true,
+          when: {
+            turning: function(event, page, view) {
+              console.log("Trang đang lật: " + page);
+            },
+            turned: function(event, page, view) {
+              console.log("Trang đã lật: " + page);
+            }
+          }
+        });
+      }
 
-  <!-- Kết nối file JavaScript -->
+      // Gọi hàm updateDisplay khi trang được tải và mỗi khi cửa sổ thay đổi kích thước
+      updateDisplay();
+      $(window).resize(function() {
+        $("#flipbook").turn('destroy');  // Hủy cấu hình cũ
+        updateDisplay();  // Cập nhật lại cấu hình mới
+      });
+    });
+  </script>
 </body>
 </html>
