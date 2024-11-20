@@ -65,7 +65,7 @@ body {
   gap: 20px; /* Khoảng cách giữa các nút */
   position: relative;
   bottom: -50px; /* Điều chỉnh vị trí */
-
+}
 /* Thiết lập nút điều khiển */
 .nav-button {
   background: none;
