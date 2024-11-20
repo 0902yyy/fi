@@ -41,18 +41,30 @@
   position: relative; /* Để căn vị trí của nút ở dưới flipbook */
 }
 
-/* Nút điều khiển container */
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column; /* Đảm bảo các thành phần theo chiều dọc */
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Chiều cao toàn màn hình */
+  background-color: #fff; /* Màu nền phù hợp */
+  box-sizing: border-box;
+}
+
 /* Nút điều khiển container */
 .button-container {
   display: flex;
-  justify-content: center; /* Căn giữa các nút theo chiều ngang */
-  width: 100%;
+  justify-content: center; /* Căn giữa theo chiều ngang */
   align-items: center; /* Căn giữa theo chiều dọc */
+  width: 100%; /* Chiều rộng đầy đủ */
+  max-width: 1200px; /* Giới hạn chiều rộng */
+  margin: 0 auto; /* Đảm bảo căn giữa */
   margin-top: 15px;
   gap: 20px; /* Khoảng cách giữa các nút */
   position: relative;
-  bottom: -50px; /* Điều chỉnh vị trí các nút dưới flipbook */
-}
+  bottom: -50px; /* Điều chỉnh vị trí */
 
 /* Thiết lập nút điều khiển */
 .nav-button {
