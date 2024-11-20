@@ -1,13 +1,5 @@
 /* Container bao bọc flipbook */
-body {
-  margin: 0;
-  padding: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh; /* Đảm bảo trang chiếm toàn màn hình */
-  box-sizing: border-box;
-}
+
 #flipbook-container {
   position: relative;
   display: flex;
