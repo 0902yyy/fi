@@ -42,33 +42,34 @@
 }
 
 /* Nút điều khiển container */
+/* Nút điều khiển container */
 .button-container {
-  .button-container {
   display: flex;
-  justify-content: center; /* Căn giữa theo chiều ngang */
+  justify-content: center; /* Căn giữa các nút theo chiều ngang */
+  width: 100%;
   align-items: center; /* Căn giữa theo chiều dọc */
-  width: 100%; /* Đảm bảo chiều rộng đầy đủ */
-  margin: 0 auto; /* Giúp căn giữa container */
   margin-top: 15px;
-  gap: 20px;
+  gap: 20px; /* Khoảng cách giữa các nút */
   position: relative;
-  bottom: -50px; /* Điều chỉnh nếu cần */
-  }
+  bottom: -50px; /* Điều chỉnh vị trí các nút dưới flipbook */
+}
+
 /* Thiết lập nút điều khiển */
 .nav-button {
   background: none;
   border: none;
-  color: #FF3177;
+  color: #FF3177; /* Màu nút mặc định */
   font-size: 24px;
   cursor: pointer;
-  margin: 0 15px;
+  margin: 0 15px; /* Khoảng cách giữa các nút */
 }
 
 .nav-button:focus {
   outline: none;
-  color: #4600AF;
+  color: #4600AF; /* Màu nút khi được focus */
 }
 
-
+/* Bố trí căn giữa tất cả nút */
 .nav-buttons {
   text-align: center;
+}
