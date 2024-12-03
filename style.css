@@ -6,7 +6,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-     background: transparent;
+    background: transparent;
     justify-content: center; /* Căn giữa theo chiều dọc */
     max-width: 1000px;
     margin: 0 auto;
@@ -24,6 +24,7 @@
   height: 500px;
   align-items: center;
   margin: 0 auto;
+  background: transparent;
   
 }
 
@@ -36,6 +37,7 @@
   overflow: hidden;
   border-radius: 8px;
   transform-origin: center;
+  background: transparent;
  ;
   transform-origin: top right; /* Cố định góc trên bên phải */
   transform-style: preserve-3d;
@@ -48,6 +50,7 @@
   object-fit: cover;
   transform-origin: center; /* Cố định ảnh bên trong trang */
   position: relative; /* Để căn vị trí của nút ở dưới flipbook */
+  background: transparent;
 }
 
 body {
@@ -60,6 +63,7 @@ body {
   height: 100vh; /* Chiều cao toàn màn hình */
   background-color: #fff; /* Màu nền phù hợp */
   box-sizing: border-box;
+  background: transparent;
 }
 
 /* Nút điều khiển container */
