@@ -27,6 +27,10 @@
   background: transparent;
   
 }
+/* Toàn bộ container và flipbook */
+#flipbook-container, #flipbook {
+  background: transparent !important; /* Bắt buộc nền trong suốt */
+}
 
 
 
