@@ -74,7 +74,7 @@ body {
 .button-container {
   display: flex;
   justify-content: center; /* Căn giữa theo chiều ngang */
-  align-items: center; /* Căn giữa theo chiều dọc */
+  align-items: right; /* Căn giữa theo chiều dọc */
   width: 100%; /* Chiều rộng đầy đủ */
   max-width: 1200px; /* Giới hạn chiều rộng */
   margin: 0 auto; /* Đảm bảo căn giữa */
