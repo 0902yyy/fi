@@ -15,7 +15,7 @@
     background: rgba(255, 255, 255, 0.1); /* Nền trắng với độ trong suốt */
     backdrop-filter: blur(10px); /* Hiệu ứng làm mờ nền phía sau */
     border-radius: 10px; /* Bo góc mềm mại */
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Đổ bóng nhẹ */
+    
   }
 /* Flipbook chính */
 #flipbook {
@@ -23,7 +23,7 @@
   height: 500px;
   align-items: center;
   margin: 0 auto;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  
 }
 
 
@@ -34,7 +34,7 @@
   overflow: hidden;
   border-radius: 8px;
   transform-origin: center;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+ ;
   transform-origin: top right; /* Cố định góc trên bên phải */
   transform-style: preserve-3d;
 }
