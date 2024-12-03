@@ -1,17 +1,14 @@
-<!DOCTYPE html>
-<html lang="vi">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>PDF Flipbook</title>
-  <link rel="stylesheet" href="style.css"> <!-- Liên kết đến file CSS -->
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <script src="turn.js"></script> <!-- Liên kết đến thư viện turn.js -->
+  <title>Flipbook</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <div id="flipbook">
-    <!-- Các trang sách, thêm ảnh vào đây -->
- <div class="page" data-page="1"><img src="image1.jpg" alt="Page 1"></div>
+  <div id="flipbook-container">
+    <div id="flipbook">
+      <div class="page" data-page="1"><img src="image1.jpg" alt="Page 1"></div>
       <div class="page" data-page="2"><img src="image2.jpg" alt="Page 2"></div>
       <div class="page" data-page="3"><img src="image3.jpg" alt="Page 3"></div>
       <div class="page" data-page="4"><img src="image4.jpg" alt="Page 4"></div>
@@ -23,8 +20,7 @@
       <div class="page" data-page="10"><img src="image10.jpg" alt="Page 10"></div>
       <div class="page" data-page="11"><img src="image11.jpg" alt="Page 11"></div>
       <div class="page" data-page="12"><img src="image12.jpg" alt="Page 12"></div>
-    <div class="page" data-page="12"><img src="image12.jpg" alt="Page 13"></div>
-  </div>
+    </div>
 
   <!-- Nút điều khiển cho flipbook -->
   <div class="buttons">
