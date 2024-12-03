@@ -1,17 +1,22 @@
 /* Container bao bọc flipbook */
 
-#flipbook-container {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center; /* Căn giữa theo chiều dọc */
-  max-width: 1000px;
-  margin: 0 auto;
-  height: 100vh; /* Đảm bảo container chiếm toàn bộ chiều cao màn hình */
-}
+<style>
+  #flipbook-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; /* Căn giữa theo chiều dọc */
+    max-width: 1000px;
+    margin: 0 auto;
+    height: 100vh; /* Đảm bảo container chiếm toàn bộ chiều cao màn hình */
 
-
+    /* Hiệu ứng xuyên thấu */
+    background: rgba(255, 255, 255, 0.1); /* Nền trắng với độ trong suốt */
+    backdrop-filter: blur(10px); /* Hiệu ứng làm mờ nền phía sau */
+    border-radius: 10px; /* Bo góc mềm mại */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Đổ bóng nhẹ */
+  }
 /* Flipbook chính */
 #flipbook {
   width: 100%;
@@ -28,6 +33,7 @@
   height: 100%;
   overflow: hidden;
   border-radius: 8px;
+  transform-origin: center;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   transform-origin: top right; /* Cố định góc trên bên phải */
   transform-style: preserve-3d;
@@ -62,7 +68,7 @@ body {
   width: 100%; /* Chiều rộng đầy đủ */
   max-width: 1200px; /* Giới hạn chiều rộng */
   margin: 0 auto; /* Đảm bảo căn giữa */
-  margin-top: 30px;
+  margin-top: 70px;
   gap: 20px; /* Khoảng cách giữa các nút */
   position: relative;
   bottom: -30px; /* Điều chỉnh vị trí */
@@ -74,7 +80,7 @@ body {
   color: #FF3177; /* Màu nút mặc định */
   font-size: 24px;
   cursor: pointer;
-  margin: 0 15px; /* Khoảng cách giữa các nút */
+  margin: 0 35px; /* Khoảng cách giữa các nút */
 }
 
 .nav-button:focus {
