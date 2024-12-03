@@ -26,6 +26,12 @@
   
 }
 
+#flipbook .page[data-page="1"] img {
+  max-width: 100%; /* Giới hạn kích thước để đảm bảo không bị kéo quá lớn */
+  max-height: 100%; /* Giới hạn chiều cao */
+  object-fit: contain; /* Bảo toàn tỉ lệ ảnh */
+  margin: auto; /* Căn giữa bên trong */
+}
 
 /* Thiết lập cho các trang */
 #flipbook .page {
