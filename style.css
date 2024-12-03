@@ -80,7 +80,7 @@ body {
   color: #FF3177; /* Màu nút mặc định */
   font-size: 24px;
   cursor: pointer;
-  margin: 0 35px; /* Khoảng cách giữa các nút */
+  margin: 0 20px; /* Khoảng cách giữa các nút */
 }
 
 .nav-button:focus {
