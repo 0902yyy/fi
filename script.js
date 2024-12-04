@@ -4,9 +4,12 @@ $(document).ready(function() {
     // Kiểm tra thiết bị là mobile hay desktop
     const isMobile = $(window).width() <= 768;
 
-    // Lấy kích thước cho flipbook tùy theo thiết bị
-     const flipbookWidth = isMobile ? $(window).width() * 0.95 : 1000;
-    const flipbookHeight = isMobile ? $(window).width() * 0.95 : 500;
+    const screenWidth = $(window).width();
+    const screenHeight = $(window).height();
+
+    const flipbookWidth = isMobile ? screenWidth : 1000; // Mobile: full chiều rộng
+    const flipbookHeight = isMobile ? screenHeight : 500; // Mobile: full chiều cao
+
 
     // Khởi tạo Turn.js
     $('#flipbook').turn({
