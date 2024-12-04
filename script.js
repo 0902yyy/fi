@@ -8,7 +8,7 @@ $(document).ready(function() {
 
     // Khởi tạo Turn.js
     $('#flipbook').turn({
-      width: fit,      // Đặt chiều rộng flipbook
+      width: flipbookWidth,      // Đặt chiều rộng flipbook
       height: flipbookHeight,    // Đặt chiều cao flipbook
       autoCenter: true,          // Tự động căn giữa flipbook
       display: 'double',  // Mobile: 1 trang, Desktop: 2 trang
