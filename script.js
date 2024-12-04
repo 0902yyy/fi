@@ -8,7 +8,7 @@ $(document).ready(function() {
     const screenHeight = $(window).height();
 
     const flipbookWidth = isMobile ? $(window).width() * 0.8 : 1000;  // Mobile: 80% chiều rộng màn hình, Desktop: cố định
-    const flipbookHeight = isMobile ? $(window).width() * 0.8 : 500;
+    const flipbookHeight = isMobile ? $(window).width(): 100%;
 
     // Khởi tạo Turn.js
     $('#flipbook').turn({
