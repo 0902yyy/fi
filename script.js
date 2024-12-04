@@ -13,7 +13,7 @@ $(document).ready(function() {
       width: flipbookWidth,      // Đặt chiều rộng flipbook
       height: flipbookHeight,    // Đặt chiều cao flipbook
       autoCenter: true,          // Tự động căn giữa flipbook
-      display: isMobile ? 'single' : 'double',  // Mobile: 1 trang, Desktop: 2 trang
+      display: double,  // Mobile: 1 trang, Desktop: 2 trang
       acceleration: true,        // Tăng tốc cho hiệu ứng mượt mà hơn
       gradients: true,           // Hiệu ứng gradient khi lật
       duration: 800              // Thời gian lật trang
