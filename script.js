@@ -1,17 +1,22 @@
 $(document).ready(function() {
-  // Kiểm tra Turn.js đã được tải chưa
- 
+  // Khởi tạo Flipbook
+  $("#flipbook").turn({
+    width: $("#flipbook").width(),  // Lấy chiều rộng hiện tại của flipbook
+    height: $("#flipbook").height(), // Lấy chiều cao hiện tại của flipbook
+    autoCenter: true,
+    display: "double",    // Hiển thị 2 trang cùng lúc trên desktop
+    gradients: true,      // Hiệu ứng gradient khi lật trang
+    elevation: 50,        // Độ nổi trang khi lật
+  });
 
-    // Khởi tạo Turn.js
-    $('#flipbook').turn({
-      width: flipbookWidth,      // Đặt chiều rộng flipbook
-      height: flipbookHeight,    // Đặt chiều cao flipbook
-      autoCenter: true,          // Tự động căn giữa flipbook
-      display: 'double',  // Mobile: 1 trang, Desktop: 2 trang
-      acceleration: true,        // Tăng tốc cho hiệu ứng mượt mà hơn
-      gradients: true,           // Hiệu ứng gradient khi lật
-      duration: 800              // Thời gian lật trang
-    });
+  // Điều chỉnh kích thước khi thay đổi kích thước cửa sổ
+  $(window).resize(function() {
+    const newWidth = $(window).width() < 768 ? $(window).width() : $("#flipbook").width();
+    const newHeight = $(window).width() < 768 ? $(window).height() * 0.7 : $("#flipbook").height();
+
+    $("#flipbook").turn("size", newWidth, newHeight);
+  });
+
 
     // Sự kiện cho nút "prev" (trang trước)
     $('.prev').click(function() {
