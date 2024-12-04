@@ -2,9 +2,12 @@ $(document).ready(function() {
   // Kiểm tra Turn.js đã được tải chưa
   if ($.isFunction($.fn.turn)) {
     // Kiểm tra thiết bị là mobile hay desktop
-    const isMobile = $(window).width() <= 768;
-    const flipbookHeight = isMobile ? screenHeight * 0.8 : 500;  // Chiều cao 80% màn hình với mobile, 500px cho desktop
-    const flipbookWidth = flipbookHeight * 2;  // Chiều ngang gấp đôi chiều cao
+     const screenWidth = $(window).width();
+    const screenHeight = $(window).height();
+
+    const flipbookHeight = isMobile ? screenHeight * 0.8 : 500;  // Mobile: chiều cao 80% màn hình
+    const flipbookWidth = isMobile ? screenWidth : flipbookHeight * 2; // Mobile: chiều rộng tự động căn chỉnh, Desktop: gấp đôi chiều cao
+
 
     // Khởi tạo Turn.js
     $('#flipbook').turn({
