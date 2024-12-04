@@ -20,7 +20,7 @@
     });
 
     // Sự kiện cho nút "prev" (trang trước)
-@@ -27,10 +28,7 @@ $(document).ready(function() {
+$(document).ready(function() {
     $('.next').click(function() {
       $('#flipbook').turn('next');
     });
