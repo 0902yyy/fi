@@ -14,19 +14,3 @@ $(document).ready(function() {
     console.error("Turn.js chưa được tải đúng.");
   }
 });
-
-
-    // Sự kiện cho nút "prev" (trang trước)
-    $('.prev').click(function() {
-      $('#flipbook').turn('previous');
-    });
-
-    // Sự kiện cho nút "next" (trang sau)
-    $('.next').click(function() {
-      $('#flipbook').turn('next');
-    });
-
-  } else {
-    console.error("Turn.js chưa được tải đúng.");
-  }
-});
