@@ -3,12 +3,12 @@ $(document).ready(function() {
   if ($.isFunction($.fn.turn)) {
     // Kiểm tra thiết bị là mobile hay desktop
     const isMobile = $(window).width() <= 768;
-    const flipbookWidth = isMobile ? $(window).height() * 0.5 : 1000;  // Mobile: 80% chiều rộng màn hình, Desktop: cố định
+    const flipbookWidth = isMobile ? $(window).height(): 1000;  // Mobile: 80% chiều rộng màn hình, Desktop: cố định
     const flipbookHeight = isMobile ? $(window).width(): 500;
 
     // Khởi tạo Turn.js
     $('#flipbook').turn({
-      width: flipbookWidth,      // Đặt chiều rộng flipbook
+      width: fit,      // Đặt chiều rộng flipbook
       height: flipbookHeight,    // Đặt chiều cao flipbook
       autoCenter: true,          // Tự động căn giữa flipbook
       display: 'double',  // Mobile: 1 trang, Desktop: 2 trang
